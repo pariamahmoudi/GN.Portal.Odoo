@@ -3,12 +3,13 @@
     <data>
 
         <record model="ir.ui.view" id="view_partner_form">
-            <field name="name">Test_Paria</field>
+            <field name="name">Paria_Test</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <field name="function" position="after">
-                    <field name='test'/> 
+                    <field name='eCode'/>
+                    <field name='nID'/> 
                 </field>
 
             </field>
