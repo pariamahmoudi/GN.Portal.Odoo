@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="GN_Lot_View">
+            <field name="name">GN_Lot_View</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="GN_CustomerId" string="Customer"/>
+                    <field name="GN_PurchaseDate" string='Purchase Date'/>
+                    <field name="GN_ExpireDate" string="Expiration Date"/>
+                    <field name="GN_Invoice" string='Invoice'/>
+                    <field name="GN_HID" string="HID"/>
+                    <field name="GN_Dongletype" string="Dongle Type"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
