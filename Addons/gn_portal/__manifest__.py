@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "GN_Production_Lot",
+    'name': "GN__Portal",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,24 +20,23 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','stock','contacts','sale'],
+    'depends': ['base','sale_management','stock'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/sales_order.xml',
-        'views/contact_import.xml',
         'views/views.xml',
         'views/templates.xml',
-        'views/Lot_Contact_Link.xml',
-        'views/Contact_Lot_Link.xml',
-        'views/inventory_product_technical _spec.xml',
-        
-        
+        'views/Lot.xml',
+        'views/Partner.xml',
+        'views/Proforma.xml',
+        'views/Invoice.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
+
     ],
     'application': True,
     'installable': True,

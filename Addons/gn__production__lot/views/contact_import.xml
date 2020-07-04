@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    
+    <menuitem name="Import From CRM" id="gn__production__lot_3" parent="contacts.res_partner_menu_contacts"
+              action='test_wizard'/>
+
+    </data>
+</odoo>
