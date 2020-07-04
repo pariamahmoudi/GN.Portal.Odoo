@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="GN_partner_View">
+      <field name="name">GN_partner_View</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <!-- <field name="phone" position="after">
+          
+        </field> -->
+        <field name="website" position="after">
+          <field name='GN_CommercialCode' string ="Commercial Code"/>
+          <field name='GN_NationalID' string ="National ID"/>
+          <field name='GN_Fax' string ="Fax"/>
+          <field name='GN_Telegram' string ="telegram"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</odoo>
