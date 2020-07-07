@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gnportal_gn__portal,"GN Portal Parnian Translation Projects",model_gn_portal_parnian_translation_project,base.group_user,1,1,1,1
+access_gn_parnian_file,"GN Portal Parnian Translation Files",model_gn_portal_parnian_translation_file,base.group_user,1,1,1,1
+access_gn_parnian_entry,"GN Portal Parnian Translation Enntries",model_gn_portal_parnian_translation_entry,base.group_user,1,1,1,1
+access_gn_parnian_branch,"GN Portal Parnian Translation Branch",model_gn_portal_parnian_translation_branch,base.group_user,1,1,1,1

@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="projects_action_window">
+            <field name="name">Parnian Translation window</field>
+            <field name="res_model">gn.portal.parnian.translation.project</field>
+            <field name="view_mode">tree,form</field>
+        </record> 
+        <record model="ir.actions.server" id="hvac_mrp_project_action_server">
+            <field name="name">hvac_project server</field>
+            <field name="model_id"         ref="model_gn_portal_parnian_translation_project"/>
+            <field name="binding_model_id" ref="model_gn_portal_parnian_translation_project" />
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+                <field name="code">
+                    action = {
+                    "type": "ir.actions.act_window",
+                    "view_mode": "form",
+                    "target":"new",
+                    "res_model": "gn.portal.parnian.batchupdate.wizard",
+                    "context":{'active_ids':records.ids}
+                    }
+                </field>
+
+        </record>
+
+    </data>
+</odoo>

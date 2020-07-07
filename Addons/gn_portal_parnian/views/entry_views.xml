@@ -1,0 +1,96 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="translation_entry_list">
+      <field name="name">Translation Entry list</field>
+      <field name="model">gn.portal.parnian.translation.entry</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name ="project_id"/>
+          <field name = "fa"/>
+          <field name = "en"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View -->
+    <record model="ir.ui.view" id="translation_entry_form">
+      <field name="name">Translation Project Form</field>
+      <field name="model">gn.portal.parnian.translation.entry</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <!--The oe_highlight class gives the button a red color when it is saved.
+		It is usually used to indicate the expected behaviour. -->
+            <!-- <button string="Generate name" type="object" name="generate_record_name" class="oe_highlight"/>
+            <button string="Generate password" type="object" name="generate_record_password"/>
+            <button string="Clear data" type="object" name="clear_record_data"/> -->
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" placeholder="Manufacturing Project" invisible="1"/>
+                <field name="display_name" placeholder="Manufacturing Project" nolabel="1" readonly="1"/>
+              </h1>
+              <field name="name" readonly="1"/>
+            </div>
+            <group>
+              <group>
+                <field name ="fa" style="text-align:right;direction:rtl;"/>
+              </group>
+              <group>
+                <field name ="en"/>
+              </group>
+            </group>
+            <!-- <field name="value"/>
+          <field name="value2"/> -->
+          </sheet>
+          <footer>
+            <group>
+              <group>
+                <field name ="tag"/>
+              </group>
+              <group>
+                <field name ="file_id" readonly="1"/>
+                <field name ="project_id" readonly="1"/>
+              </group>
+            </group>
+          </footer>
+
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="entries_action_window">
+      <field name="name">Translation Entry</field>
+      <field name="res_model">gn.portal.parnian.translation.entry</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="projects_action_server">
+      <field name="name">parnian server</field>
+      <field name="model_id" ref="model_gn_portal_parnian_translation_project"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+
+
+
+  </data>
+</odoo>
