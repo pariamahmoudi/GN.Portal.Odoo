@@ -2,9 +2,9 @@
 from odoo import models, fields, api
 from typing import TYPE_CHECKING, Any, List
 import uuid
-
+from ..parnian import Parnian
 if TYPE_CHECKING:
-    from gn_imports import SaleOrderLine
+    from ..parnian import SaleOrderLine
 else:
     SaleOrder = models.Model
 

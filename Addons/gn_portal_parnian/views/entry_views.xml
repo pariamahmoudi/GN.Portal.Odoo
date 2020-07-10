@@ -1,5 +1,55 @@
 <odoo>
   <data>
+
+
+    <!-- <record id="view_mrp_bom_filter" model="ir.ui.view">
+      <field name="name">mrp.bom.select</field>
+      <field name="model">mrp.bom</field>
+      <field name="arch" type="xml">
+        <search string="Search Bill Of Material">
+          <field name="code" string="Bill of Materials" filter_domain="['|', ('code', 'ilike', self), ('product_tmpl_id', 'ilike', self)]"/>
+          <field name="product_tmpl_id" string="Product"/>
+          <field name="bom_line_ids" string="Component"/>
+          <filter string="Manufacturing" name="normal" domain="[('type', '=', 'normal')]"/>
+          <filter string="Kit" name="phantom" domain="[('type', '=', 'phantom')]"/>
+          <separator/>
+          <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+          <group expand="0" string="Group By...">
+            <filter string="Product" name="product" domain="[]" context="{'group_by': 'product_tmpl_id'}"/>
+            <filter string='BoM Type' name="group_by_type" domain="[]" context="{'group_by' : 'type'}"/>
+            <filter string='Unit of Measure' name="default_unit_of_measure" domain="[]" context="{'group_by' : 'product_uom_id'}"/>
+            <filter string="Routing" name="routings" domain="[]" context="{'group_by': 'routing_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record> -->
+    <record id="view_translation_entry_filter" model="ir.ui.view">
+      <field name="name">translation entry filter</field>
+      <field name="model">gn.portal.parnian.translation.entry</field>
+      <field name="arch" type="xml">
+        <search string="Search Bill Of Material">
+          <field name="name" string="Entries" filter_domain="['|', ('en', 'ilike', self), ('fa', 'ilike', self)]"/>
+          <filter string="Large" name="large" domain="[('size', '>', 50)]"/>
+          <filter string="High Priority" name="high" domain="[('priority', '=', 'high')]"/>
+          <filter string="Poor translation" name="high" domain="['|',('quality', '=', 'poor'),('quality','=','unknown')]"/>
+          <!-- <field name="code" string="Bill of Materials" filter_domain="['|', ('code', 'ilike', self), ('product_tmpl_id', 'ilike', self)]"/>
+          <field name="product_tmpl_id" string="Product"/>
+          <field name="bom_line_ids" string="Component"/>
+          <filter string="Manufacturing" name="normal" domain="[('type', '=', 'normal')]"/>
+          <filter string="Kit" name="phantom" domain="[('type', '=', 'phantom')]"/> -->
+          <separator/>
+          <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+          <group expand="0" string="Group By...">
+            <!-- <filter string="Product" name="product" domain="[]" context="{'group_by': 'product_tmpl_id'}"/>
+            <filter string='BoM Type' name="group_by_type" domain="[]" context="{'group_by' : 'type'}"/>
+            <filter string='Unit of Measure' name="default_unit_of_measure" domain="[]" context="{'group_by' : 'product_uom_id'}"/>
+            <filter string="Routing" name="routings" domain="[]" context="{'group_by': 'routing_id'}"/> -->
+          </group>
+        </search>
+      </field>
+    </record>
+
+
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="translation_entry_list">
@@ -7,10 +57,16 @@
       <field name="model">gn.portal.parnian.translation.entry</field>
       <field name="arch" type="xml">
         <tree>
+          <button name="action_like" type="object" icon="fa-thumbs-o-up"></button>
+          <button name="action_dislike" type="object" class="oe_stat_button" icon="fa-thumbs-o-down" string="Dislike"/>
           <field name="id"/>
           <field name ="project_id"/>
+          <field name ="score"/>
+          <field name ="priority"/>
+          <field name = "quality"/>
           <field name = "fa"/>
           <field name = "en"/>
+          <field name = "size"/>
         </tree>
       </field>
     </record>
@@ -22,15 +78,39 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <!--The oe_highlight class gives the button a red color when it is saved.
-		It is usually used to indicate the expected behaviour. -->
-            <!-- <button string="Generate name" type="object" name="generate_record_name" class="oe_highlight"/>
-            <button string="Generate password" type="object" name="generate_record_password"/>
-            <button string="Clear data" type="object" name="clear_record_data"/> -->
+
+            <button name="action_final" type="object" string="Finalize" states="inprogress" class="oe_highlight"/>
+            <button name="action_request" type="object" string="Requset Revision" states="draft" class="oe_highlight"/>
+            <button name="action_inprogress" type="object" string="In Progress" states="draft,request" class="oe_highlight"/>
+            <button name="action_draft" type="object" string="Reset to draft" states="inprogress,final" />
+            <field name="state" widget="statusbar"/>
           </header>
           <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button name="%(action_entry_commits)d" type="action" class="oe_stat_button" icon="fa-bars" string="Commits"/>
+              <button name="add_to_default_branch" type="object" class="oe_stat_button" icon="fa-plus-square" string="Add to Branch"/>
+              <button name="recalculate" type="object" class="oe_stat_button" icon="fa-calculator" string="Recalculate"/>
+              <button name="action_like" type="object" class="oe_stat_button" icon="fa-thumbs-o-up" string="Like"/>
+              <button name="action_dislike" type="object" class="oe_stat_button" icon="fa-thumbs-o-down" string="Dislike"/>
+
+            </div>
+
             <div class="oe_title">
               <h1>
+                <div>
+                  <span class="fa fa-thermometer-full" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('priority', '!=', 'high')]}"> High </span>
+                  <span class="fa fa-thermometer-empty" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('priority', 'not in', ('low','unknown'))]}"> Low </span>
+                  <span class="fa fa-thermometer-half " style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('priority', '!=', 'medium')]}"> Medium </span>
+                  <!--                   
+                <span class="fa fa-battery-half" style="margin-left:10px;margin-right:10px;"> Weak </span> <span> </span>
+                <span class="fa fa-thermometer-full" style="margin-left:10px;margin-right:10px;"> Weak </span> -->
+
+                  <span class="fa fa-thumbs-o-down" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('quality', 'not in', ('good','perfect'))]}"> Weak </span>
+                  <span class="fa fa-thumbs-o-up" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('quality', 'not in', ('poor','unknown'))]}"> Good </span>
+                  Score: <field name="score"/>
+
+
+                </div>
                 <field name="name" placeholder="Manufacturing Project" invisible="1"/>
                 <field name="display_name" placeholder="Manufacturing Project" nolabel="1" readonly="1"/>
               </h1>
@@ -38,10 +118,14 @@
             </div>
             <group>
               <group>
-                <field name ="fa" style="text-align:right;direction:rtl;"/>
+                <div>
+                  <field name ="en" nolabel="1" readonly="1"/>
+                </div>
               </group>
               <group>
-                <field name ="en"/>
+                <div style="background-color:bisque">
+                  <field name ="fa" style="text-align:right;direction:rtl;" nolabel="1"/>
+                </div>
               </group>
             </group>
             <!-- <field name="value"/>
@@ -50,11 +134,17 @@
           <footer>
             <group>
               <group>
+                <field name = "priority"/>
+                <field name = "quality"/>
                 <field name ="tag"/>
+                <field name ="score" readonly="1"/>
+                <field name ="last_calculated_on" readonly="1"/>
+                <field name ="no_reviews" readonly="1"/>
               </group>
               <group>
                 <field name ="file_id" readonly="1"/>
                 <field name ="project_id" readonly="1"/>
+
               </group>
             </group>
           </footer>

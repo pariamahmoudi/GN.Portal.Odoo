@@ -71,11 +71,11 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="Parnian Projects" id="parnian_translation_menu_root"/>
+    <menuitem name="Parnian Translations" id="parnian_translation_menu_root"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Menu 1" id="parnian_translation_menu_1" parent="parnian_translation_menu_root"/>
+    <menuitem name="Translations" id="parnian_translation_menu_1" parent="parnian_translation_menu_root"/>
     <menuitem name="Menu 2" id="parnian_translation_menu_2" parent="parnian_translation_menu_root"/>
 
     <!-- actions -->
@@ -83,8 +83,9 @@
     <menuitem name="Projects" id="parnian_translation_menu_list" parent="parnian_translation_menu_1" action="projects_action_window"/>
     <menuitem name="Entries" id="parnian_translation_menu_entries" parent="parnian_translation_menu_1" action="entries_action_window"/>
     <menuitem name="Branches" id="parnian_translation_menu_branches" parent="parnian_translation_menu_1" action="branches_action_window"/>
+    <menuitem name="Commits" id="parnian_translation_menu_branche_lines" parent="parnian_translation_menu_1" action="branchlines_action_window"/>
     <menuitem name="Files" id="parnian_translation_menu_files" parent="parnian_translation_menu_1" action="files_action_window"/>
-
+  
     <!-- <menuitem name="Server to list" id="sandbox" parent="sandbox.menu_2" action="parnian.translation.projects.action_server"/> -->
 
   </data>

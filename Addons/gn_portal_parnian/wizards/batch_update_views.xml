@@ -3,24 +3,52 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
     <record id="batch_update_wizard_form" model="ir.ui.view">
-        <field name="name">Recalculate Project Wizard</field>
+        <field name="name">Batch Update</field>
         <field name="model">gn.portal.parnian.batchupdate.wizard</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <h4>
-                    This action will make a new revision of the project base on
-                    follwoing settings:
+                        Batch Update.
                     </h4>
                     <div>
                         <field name="add_to_branch"/>
-                        <strong>Add to Batch Sale: </strong>
-                            Revises the sale order...
+                        <strong>Add to Branch: </strong>
+                            Adds the selected entries to the branch.
                     </div>
+                    <div>
+                        <strong>Branch: </strong>
+                        <field name="branch_id"/>
+                            The branch that entries will be added to. If blank an a new branch will be created.
+                    </div>
+                    <div>
+                        <field name="update_quality"/>
+                        <strong>Update Quality: </strong>
+                        <field name ="quality"/>
+                    </div>
+                    <div>
+                        <field name="update_priority"/>
+                        <strong>Update Priority: </strong>
+                        <field name ="priority"/>
+                    </div>
+                    <div>
+                        <field name="update_finalize"/>
+                        <strong>Finalize: </strong>
+                        Finialize seleced records, final records are archived and not listed as active entries.
+                        
+                    </div>
+                    <div>
+                        <field name="update_untranslatable"/>
+                        <strong>Declare Untranslatable: </strong>
+                        Declare selected records as Untranslatable. System will consider them as translated 
+                        in score calculations.
+                        
+                    </div>
+
 
                 </sheet>
                 <footer>
-                    <button name="action_add_to_branch" type="object" string="Revise" class="oe_highlight" />
+                    <button name="action_batch_update" type="object" string="Update" class="oe_highlight" />
                     <button special="cancel" string="Cancel" />
                 </footer>
             </form>

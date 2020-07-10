@@ -29,8 +29,8 @@
         'views/templates.xml',
         'views/action_views.xml',
         'wizards/batch_update_views.xml',
-        'views/entry_views.xml',
         'views/branch_views.xml',
+        'views/entry_views.xml',
         'views/file_views.xml',
         'views/project_views.xml',
 

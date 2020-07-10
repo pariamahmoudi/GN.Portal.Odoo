@@ -7,7 +7,11 @@
       <field name="model">gn.portal.parnian.translation.branch</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
+          <field name="display_name"/>
+          <field name="responsible"/>
+          <field name="state"/>
+          <field name="due_date"/>
+
         </tree>
       </field>
     </record>
@@ -19,18 +23,103 @@
       <field name="arch" type="xml">
         <form>
           <header>
+
+            <button name="action_inprogress" type="object" string="Start" states="draft" class="oe_highlight"/>
+            <button name="action_submit" type="object" string="Submit" states="inprogress" class="oe_highlight"/>
+            <button name="action_commit" type="object" string="Commit" states="submitted" class="oe_highlight"/>
+            <!-- <button name="action_finalize" type="object" string="Finalize" states="committed" class="oe_highlight"/> -->
+            <button name="action_undo" type="object" string="Undo Commmit" states="committed" class="oe_highlight"/>
+            <button name="action_cancel" type="object" string="Cancel Commit" states="submitted" class="oe_highlight"/>
+            <button name="action_draft" type="object" string="Reset to draft" states="inprogress,committed,sumitted" />
+            <field name="state" widget="statusbar"/>
+
             <!--The oe_highlight class gives the button a red color when it is saved.
-		It is usually used to indicate the expected behaviour. -->
+		          It is usually used to indicate the expected behaviour. -->
             <!-- <button string="Generate name" type="object" name="generate_record_name" class="oe_highlight"/>
             <button string="Generate password" type="object" name="generate_record_password"/>
             <button string="Clear data" type="object" name="clear_record_data"/> -->
           </header>
           <sheet>
-            <field name="name"/>
+            <div class="oe_title">
+              <h1>
+                <field name="display_name" placeholder="Manufacturing Project" nolabel="1" readonly="1"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="name" placeholder="New Branch" invisible="0"/>
+
+              </group>
+              <group>
+                <field name="responsible"  invisible="0"/>
+                <field name="due_date"  invisible="0"/>
+
+              </group>
+
+            </group>
+            <field name="line_ids" widget="one2many">
+              <tree string="Lines" editable="bottom">
+                <button name="open" type="object" icon="fa-bars" ></button>
+                <field name="entry_id" readonly="1" style="width:20% !important" invisible="1"/>
+                <field name="id"/>
+                <field name="en" readonly="1"/>
+                <field name="fa" />
+              </tree>
+            </field>
+
             <!-- <field name="value"/>
           <field name="value2"/> -->
           </sheet>
 
+        </form>
+      </field>
+    </record>
+
+    <!-- BarnchLine List View-->
+    <record model="ir.ui.view" id="translation_branch_line_list">
+      <field name="name">Commits</field>
+      <field name="model">gn.portal.parnian.translation.branch.line</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="branch_id"/>
+          <field name="entry_id"/>
+          <field name ="committed"/>
+          <field name ="is_changed"/>
+          <field name="en"/>
+          <field name="fa"/>
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="translation_branch_line_form">
+      <field name="name">Branch Line</field>
+      <field name="model">gn.portal.parnian.translation.branch.line</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="branch_id"  invisible="0" readonly="1"/>
+              </group>
+              <group>
+                <field name="entry_id"  invisible="0" readonly="1"/>
+              </group>
+            </group>
+            <group>
+              <group>
+                <div>
+                  <field name ="en" nolabel="1" readonly="1"/>
+                </div>
+              </group>
+              <group>
+                <div style="">
+                  <field name ="fa" style="text-align:right;direction:rtl;" nolabel="1"/>
+                </div>
+              </group>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
@@ -41,6 +130,19 @@
     <record model="ir.actions.act_window" id="branches_action_window">
       <field name="name">Parnian Branch</field>
       <field name="res_model">gn.portal.parnian.translation.branch</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="branchlines_action_window">
+      <field name="name">Branch Lines</field>
+      <field name="res_model">gn.portal.parnian.translation.branch.line</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_entry_commits">
+      <field name="name">Branch Lines</field>
+      <field name="res_model">gn.portal.parnian.translation.branch.line</field>
+      <field name="domain">[["entry_id","=",active_id]]</field>
       <field name="view_mode">tree,form</field>
     </record>
 
