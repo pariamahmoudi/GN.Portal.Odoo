@@ -105,9 +105,9 @@
                 <span class="fa fa-battery-half" style="margin-left:10px;margin-right:10px;"> Weak </span> <span> </span>
                 <span class="fa fa-thermometer-full" style="margin-left:10px;margin-right:10px;"> Weak </span> -->
 
-                  <span class="fa fa-thumbs-o-down" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('quality', 'not in', ('good','perfect'))]}"> Weak </span>
-                  <span class="fa fa-thumbs-o-up" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('quality', 'not in', ('poor','unknown'))]}"> Good </span>
-                  Score: <field name="score"/>
+                  <span class="fa fa-thumbs-o-down" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('quality', 'in', ('good','perfect','acceptable'))]}">  </span>
+                  <span class="fa fa-thumbs-o-up" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('quality', 'in', ('poor','unknown'))]}">  </span>
+                  <field name="score"/>
 
 
                 </div>
@@ -140,6 +140,8 @@
                 <field name ="score" readonly="1"/>
                 <field name ="last_calculated_on" readonly="1"/>
                 <field name ="no_reviews" readonly="1"/>
+                <field name ="no_likes" readonly="1"/>
+                <field name ="no_dislikes" readonly="1"/>
               </group>
               <group>
                 <field name ="file_id" readonly="1"/>

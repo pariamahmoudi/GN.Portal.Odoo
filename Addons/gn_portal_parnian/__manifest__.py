@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/ir_sequence_data.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/action_views.xml',
@@ -32,6 +33,7 @@
         'views/branch_views.xml',
         'views/entry_views.xml',
         'views/file_views.xml',
+        'views/issue_views.xml',
         'views/project_views.xml',
 
 
@@ -39,6 +41,7 @@
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
+        ''
 
     ],
     # 'qweb': ['static/src/xml/tree_view_button.xml'],

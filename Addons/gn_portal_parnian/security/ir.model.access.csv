@@ -4,3 +4,5 @@ access_gn_parnian_file,"GN Portal Parnian Translation Files",model_gn_portal_par
 access_gn_parnian_entry,"GN Portal Parnian Translation Enntries",model_gn_portal_parnian_translation_entry,base.group_user,1,1,1,1
 access_gn_parnian_branch,"GN Portal Parnian Translation Branch",model_gn_portal_parnian_translation_branch,base.group_user,1,1,1,1
 access_gn_parnian_branch_line,"GN Portal Parnian Translation Branch Line",model_gn_portal_parnian_translation_branch_line,base.group_user,1,1,1,1
+access_gn_parnian_issue,"GN Portal Parnian Translation Issue",model_gn_portal_parnian_translation_issue,base.group_user,1,1,1,1
+access_gn_parnian_issue_line,"GN Portal Parnian Translation Issue Line",model_gn_portal_parnian_translation_issue_line,base.group_user,1,1,1,1

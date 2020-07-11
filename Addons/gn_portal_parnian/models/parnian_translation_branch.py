@@ -19,6 +19,7 @@ class ParnianTranslationBranch(models.Model):
     #             'mail.activity.mixin', 'utm.mixin']
 
     name = fields.Char(default="noname")
+    code = fields.Char(default="New")
     line_ids = fields.One2many(
         comodel_name="gn.portal.parnian.translation.branch.line",
         inverse_name="branch_id")
@@ -28,60 +29,65 @@ class ParnianTranslationBranch(models.Model):
     due_date = fields.Date(string="Due Date")
     active = fields.Boolean(default=True)
 
-
     state = fields.Selection([
         ('draft', "Draft"),
         ('inprogress', "In Progress"),
         ('submitted', "Submitted"),
-        ('committed',"Committed"),
-        ], 
-        default="draft", 
+        ('committed', "Committed"),
+    ],
+        default="draft",
         string="Status")
 
     def name_get(self):
         result = []
         for rec in self:
-            name = '' if rec.name=='noname' else rec.name
-            result.append((rec.id, '#{} : {}'.format(rec.id, name)))
+            name = '' if rec.name == 'noname' else rec.name
+            result.append((rec.id, '#{} : {}'.format(rec.code, name)))
         return result
 
     def add_entry(self, entry: ParnianTranslationEntry):
         result = False
 
         if entry:
-            result = self.line_ids.filtered(lambda x: x.id == entry.id)
+            items = self.line_ids.filtered(lambda x: x.entry_id.id == entry.id)
+            result = items[0] if len(items)>0 else False
             if not result:
                 result = self.env["gn.portal.parnian.translation.branch.line"].create({
                     # pylint: disable=no-member
-                    'branch_id':self.id,
+                    'branch_id': self.id,
                     'entry_id': entry.id,
                     'fa': entry.fa,
-                    'backup':entry.fa,
-                    'en':entry.en,
-                    'ar':entry.ar
+                    'backup': entry.fa,
+                    'en': entry.en,
+                    'ar': entry.ar
                 })
             if result:
-                result.state="inprogress"
-                result.active=True
-        
+                result.state = "inprogress"
+                result.active = True
+
         return result
 
     def commit(self):
         for _line in self.line_ids:
-            line:ParnianTranslationBranchLine = _line
-            entry:ParnianTranslationEntry = line.entry_id
-            entry.fa = line.fa
+            line: ParnianTranslationBranchLine = _line
+            entry: ParnianTranslationEntry = line.entry_id
             entry.no_reviews = entry.no_reviews+1 if entry.no_reviews else 1
+            if 1==0 or (line.fa and line.fa != line.backup):
+                entry.fa = line.fa
+                entry.no_dislikes = 0
+                entry.no_likes = 1
+                entry.quality = "acceptable"
+                entry.recalculate()
             line.committed = True
             entry.action_final()
-    
+
     def uncommit(self):
-        if self.state in ('committed','final'):
+        if self.state in ('committed', 'final'):
             for _line in self.line_ids:
-                line:ParnianTranslationBranchLine = _line
-                entry:ParnianTranslationEntry = line.entry_id
+                line: ParnianTranslationBranchLine = _line
+                entry: ParnianTranslationEntry = line.entry_id
                 if entry:
-                    if entry.fa==line.fa:
+                    if entry.fa == line.fa:
                         entry.fa = line.backup
                     entry.action_inprogress()
                 line.committed = False
@@ -91,7 +97,7 @@ class ParnianTranslationBranch(models.Model):
         return True
 
     def action_inprogress(self):
-        self.state ='inprogress'
+        self.state = 'inprogress'
         return True
 
     def action_submit(self):
@@ -101,59 +107,60 @@ class ParnianTranslationBranch(models.Model):
 
     def action_commit(self):
         for _branch in self:
-            branch:ParnianTranslationBranch = _branch
-            branch.state ='committed'
+            branch: ParnianTranslationBranch = _branch
+            branch.state = 'committed'
             branch.commit()
-            branch.active=False
-        return True
-    
-    def action_undo(self):
-        for _branch in self:
-            branch:ParnianTranslationBranch = _branch
-            branch.uncommit()
-            branch.active= True
-            branch.state ="inprogress"
-
-    def action_finalize(self):
-        for _branch in self:
-            branch:ParnianTranslationBranch = _branch
-            for _line in branch.line_ids:
-                line:ParnianTranslationBranchLine = _line
-                line.entry_id.fa = line.fa
-                line.entry_id.action_final()
-            branch.state ='final'
             branch.active = False
         return True
 
+    def action_undo(self):
+        for _branch in self:
+            branch: ParnianTranslationBranch = _branch
+            branch.uncommit()
+            branch.active = True
+            branch.state = "inprogress"
+
+    def action_finalize(self):
+        for _branch in self:
+            branch: ParnianTranslationBranch = _branch
+            for _line in branch.line_ids:
+                line: ParnianTranslationBranchLine = _line
+                line.entry_id.fa = line.fa
+                line.entry_id.action_final()
+            branch.state = 'final'
+            branch.active = False
+        return True
 
     def action_cancel(self):
         for _branch in self:
-            branch:ParnianTranslationBranch = _branch
+            branch: ParnianTranslationBranch = _branch
             branch.uncommit()
-            branch.active=True
-            branch.state="inprogress"
+            branch.active = True
+            branch.state = "inprogress"
 
         return True
 
-
-
     @api.model
     def create(self, vals):
+        Parnian.iterative_levenshtein("babak","babok")
+        if vals.get('code', 'New') == 'New':
+            vals['code'] = self.env['ir.sequence'].next_by_code(
+                'parnian.translation.branch') or 'New'
         if vals.get('guid', 'New') == 'New':
             vals['guid'] = str(uuid.uuid4())
         vals['responsible'] = self.env.user.id
         result = super(ParnianTranslationBranch, self).create(vals)
-        
+
         return result
 
 
 class ParnianTranslationBranchLine(models.Model):
     _name = "gn.portal.parnian.translation.branch.line"
     _description = "Translation Branch Line"
-    _order="id desc"
+    _order = "id desc"
 
     branch_id = fields.Many2one(
-        "gn.portal.parnian.translation.branch", string="Branch")
+        "gn.portal.parnian.translation.branch", string="Branch", ondelete='cascade')
     entry_id = fields.Many2one(
         "gn.portal.parnian.translation.entry", string="Entry")
     fa = fields.Text("Farsi")
@@ -161,14 +168,9 @@ class ParnianTranslationBranchLine(models.Model):
     ar = fields.Text("Arabic")
     backup = fields.Text("Backup")
     committed = fields.Boolean("Committed")
-    is_changed=fields.Boolean("Change",compute="_compute_changed")
+    is_changed = fields.Boolean("Change", compute="_compute_changed")
 
     @api.depends('fa')
     def _compute_changed(self):
         for r in self:
-            r.is_changed = r.fa and r.fa!=r.backup
-
-
-
-
-
+            r.is_changed = r.fa and r.fa != r.backup

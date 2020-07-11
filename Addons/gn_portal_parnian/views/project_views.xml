@@ -80,6 +80,8 @@
 
     <!-- actions -->
 
+    <menuitem name="Issues" id="parnian_translation_menu_issues" parent="parnian_translation_menu_1" action="issues_action_window"/>
+
     <menuitem name="Projects" id="parnian_translation_menu_list" parent="parnian_translation_menu_1" action="projects_action_window"/>
     <menuitem name="Entries" id="parnian_translation_menu_entries" parent="parnian_translation_menu_1" action="entries_action_window"/>
     <menuitem name="Branches" id="parnian_translation_menu_branches" parent="parnian_translation_menu_1" action="branches_action_window"/>
