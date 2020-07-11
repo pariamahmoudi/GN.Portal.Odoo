@@ -37,11 +37,12 @@ class _parnian():
     def get_my_default_branch(self, model: models.Model):
         user = model.env.user
         branches = self.branches(model)
-        my_branches = branches.search([('responsible', '=', user.id), ('active', '=', True)]) \
+        my_branches = branches.search([('responsible', '=', user.id), ('active', '=', True),('state','=','draft'),('branch_type','=','user')]) \
             .sorted(lambda x: x.create_date, reverse=True)
         res = my_branches[0] if len(my_branches) > 0 else branches.create({
             'responsible': user.id,
-            'name': "{}'s Branch".format(user.display_name)
+            'name': "{}'s Branch".format(user.display_name),
+            'branch_type':'user'
         })
         return res
     # ref: https://www.python-course.eu/levenshtein_distance.php

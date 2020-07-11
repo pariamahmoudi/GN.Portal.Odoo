@@ -96,6 +96,7 @@
               <group>
                 <field name="responsible" invisible="0"/>
                 <field name="due_date" invisible="0"/>
+                <field name="issue_id" invisible="0"/>
 
               </group>
 

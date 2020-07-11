@@ -28,7 +28,7 @@
       <field name="model">gn.portal.parnian.translation.entry</field>
       <field name="arch" type="xml">
         <search string="Search Bill Of Material">
-          <field name="name" string="Entries" filter_domain="['|', ('en', 'ilike', self), ('fa', 'ilike', self)]"/>
+          <field name="name" string="Entries" context="{'active_test':False}" filter_domain="['|', ('en', 'ilike', self), ('fa', 'ilike', self)]"/>
           <filter string="Large" name="large" domain="[('size', '>', 50)]"/>
           <filter string="High Priority" name="high" domain="[('priority', '=', 'high')]"/>
           <filter string="Poor translation" name="high" domain="['|',('quality', '=', 'poor'),('quality','=','unknown')]"/>

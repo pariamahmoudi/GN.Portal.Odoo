@@ -22,12 +22,19 @@ class ParnianTranslationIssue(models.Model):
         ('submitted', "Submitted"),
         ('done', "Done")],
         string='Status', default='draft')
+    branch_id = fields.Many2one("gn.portal.parnian.translation.branch",string="Branch")
+
+
+
 
     def create_branch(self):
         result = False
         if len(self.line_ids)>0:
             branch:ParnianTranslationBranch = Parnian.branches(self).create({
-                'name' : "issue: {}".format(self.name)
+                'name' : "issue: {}".format(self.name),
+                'branch_type':'issue',
+                # pylint: disable=no-member
+                'issue_id':self.id
 
             })
             for e in self.line_ids:

@@ -136,6 +136,14 @@ class ParnianTranslationEntry(models.Model):
                     add_word(word)
                     filter_items_count = filter_items_count+1
 
+            
+            
+            #acrchive = ['|', ('active', '=', True), ('active', '=', False)]
+            #filter.append(acrchive)
+            #_items = self.search([('fa','like','garbage'), '|',('active', '=', True), ('active', '=', False)])
+            filter.append('|')
+            filter.append(('active','=',True))
+            filter.append(('active','=',False))
             items = self.search(filter, limit=50)
             distances = []
             for i in items:
@@ -143,9 +151,9 @@ class ParnianTranslationEntry(models.Model):
                 # pylint: disable=no-member
                 # if entry.id != self.id:
                 if en:
-                    dist = Parnian.iterative_levenshtein(target, entry.en) 
+                    dist = Parnian.iterative_levenshtein(target, entry.en)
                 else:
-                    dist = Parnian.iterative_levenshtein(target, entry.fa) 
+                    dist = Parnian.iterative_levenshtein(target, entry.fa)
 
                 distances.append({
                     'distance': dist,

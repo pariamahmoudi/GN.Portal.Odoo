@@ -29,6 +29,7 @@ class ParnianTranslationBranch(models.Model):
     due_date = fields.Date(string="Due Date")
     active = fields.Boolean(default=True)
 
+
     state = fields.Selection([
         ('draft', "Draft"),
         ('inprogress', "In Progress"),
@@ -37,6 +38,13 @@ class ParnianTranslationBranch(models.Model):
     ],
         default="draft",
         string="Status")
+    issue_id = fields.Many2one('gn.portal.translation.issue', string="Issue")
+    branch_type = fields.Selection([
+        ('user','User'),
+        ('issue','Issue'),
+        ('system','System')],
+        default="user"
+    )
 
     def name_get(self):
         result = []
