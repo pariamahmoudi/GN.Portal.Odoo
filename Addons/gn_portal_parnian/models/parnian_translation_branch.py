@@ -38,7 +38,7 @@ class ParnianTranslationBranch(models.Model):
     ],
         default="draft",
         string="Status")
-    issue_id = fields.Many2one('gn.portal.translation.issue', string="Issue")
+    issue_id = fields.Many2one('gn.portal.parnian.translation.issue', string="Issue")
     branch_type = fields.Selection([
         ('user','User'),
         ('issue','Issue'),
@@ -72,6 +72,8 @@ class ParnianTranslationBranch(models.Model):
             if result:
                 result.state = "inprogress"
                 result.active = True
+            entry.state = 'inprogress'
+            entry.active=True
 
         return result
 
@@ -150,7 +152,7 @@ class ParnianTranslationBranch(models.Model):
 
     @api.model
     def create(self, vals):
-        Parnian.iterative_levenshtein("babak","babok")
+        
         if vals.get('code', 'New') == 'New':
             vals['code'] = self.env['ir.sequence'].next_by_code(
                 'parnian.translation.branch') or 'New'

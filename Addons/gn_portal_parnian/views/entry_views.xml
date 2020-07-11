@@ -60,13 +60,13 @@
           <button name="action_like" type="object" icon="fa-thumbs-o-up"></button>
           <button name="action_dislike" type="object" class="oe_stat_button" icon="fa-thumbs-o-down" string="Dislike"/>
           <field name="id"/>
-          <field name ="project_id"/>
-          <field name ="score"/>
+          <field name ="state"/>
           <field name ="priority"/>
           <field name = "quality"/>
-          <field name = "fa"/>
-          <field name = "en"/>
+          <field name ="score"/>
           <field name = "size"/>
+          <field name = "en"/>
+          <field name = "fa"/>
         </tree>
       </field>
     </record>

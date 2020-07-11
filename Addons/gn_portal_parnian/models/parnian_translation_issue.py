@@ -12,7 +12,7 @@ class ParnianTranslationIssue(models.Model):
 
     name = fields.Char(default="New")
     description = fields.Char()
-    hint = fields.Char(string="Hint")
+    phrase = fields.Char(string="Mistranslation Phrase")
     hint_en = fields.Char(string="Hint (English)")
     
     line_ids = fields.One2many("gn.portal.parnian.translation.issue.line",inverse_name="issue_id")
@@ -23,6 +23,7 @@ class ParnianTranslationIssue(models.Model):
         ('done', "Done")],
         string='Status', default='draft')
     branch_id = fields.Many2one("gn.portal.parnian.translation.branch",string="Branch")
+    code = fields.Char("Code", default="New")
 
 
 
@@ -55,15 +56,17 @@ class ParnianTranslationIssue(models.Model):
         for r in self.line_ids:
             if not only_auto or r.auto:
                 r.unlink()
+
     def action_auto_add_lines(self):
-        if self.hint and len(self.hint) >0:
-            items = Parnian.entries(self).get_nearest(self.hint)
+        if self.phrase and len(self.phrase) >0:
+            items = Parnian.entries(self).get_nearest(self.phrase)
             if items:
                 for item in items:
                     dist = item.get('distance',1000)
                     entry:ParnianTranslationEntry = item.get('entry',False)
                     if entry:
                         self.env['gn.portal.parnian.translation.issue.line'].create({
+                            # pylint: disable=no-member
                             'issue_id':self.id,
                             'entry_id':entry.id,
                             'fa':entry.fa,
@@ -79,6 +82,23 @@ class ParnianTranslationIssue(models.Model):
 
         return True
 
+    def name_get(self):
+        result = []
+        for rec in self:
+            result.append((rec.id, '{} : {}'.format(rec.code, rec.name)))
+        return result
+
+    @api.model
+    def create(self, vals):
+        if vals.get('code', 'New') == 'New':
+            vals['code'] = self.env['ir.sequence'].next_by_code(
+                'parnian.translation.issue') or 'New'
+        # if vals.get('guid', 'New') == 'New':
+        #     vals['guid'] = str(uuid.uuid4())
+        # vals['responsible'] = self.env.user.id
+        result = super(ParnianTranslationIssue, self).create(vals)
+
+        return result
 
 
 class ParnianTranslationIssueLine(models.Model):
