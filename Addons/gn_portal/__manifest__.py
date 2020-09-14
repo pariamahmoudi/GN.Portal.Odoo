@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "GN__Portal",
+    'name': "GN.Portal",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Gostareh Negar Portal Extensions
+    """,
 
     'description': """
         Long description of module's purpose
@@ -29,8 +29,9 @@
         'views/templates.xml',
         'views/Lot.xml',
         'views/Partner.xml',
-        'views/Proforma.xml',
+        'views/SaleOrderViews.xml',
         'views/Invoice.xml',
+        'views/Product.xml'
 
     ],
     # only loaded in demonstration mode

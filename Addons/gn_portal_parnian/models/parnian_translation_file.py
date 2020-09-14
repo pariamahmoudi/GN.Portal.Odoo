@@ -1,11 +1,7 @@
 from odoo import models, fields, api
 from typing import TYPE_CHECKING, Any, List
 import uuid
-
-if TYPE_CHECKING:
-    from gn_imports import ParnianTranslationProject
-else:
-    ParnianTranslationProject = models.Model
+from ..parnian import ParnianTranslationProject
 
 class ParnianTranslationFile(models.Model):
     _name = "gn.portal.parnian.translation.file"

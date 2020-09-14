@@ -173,6 +173,12 @@ class ParnianTranslationEntry(models.Model):
             entry.last_calculated_on = datetime.datetime.now()
         return True
 
+    def action_untranslatable(self):
+        for _r in self:
+            entry: ParnianTranslationEntry = _r
+            entry.untranslatable = True
+        return True
+
     def action_final(self):
         for r in self:
             r.state = 'final'

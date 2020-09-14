@@ -1,8 +1,10 @@
 from typing import TYPE_CHECKING, Any,List, Dict
+import logging
 if TYPE_CHECKING:
     from odoo import models, fields, api
     from odoo.addons.sale.models.sale import SaleOrder
     from odoo.addons.sale.models.sale import SaleOrderLine
+    from odoo.addons.base.models.res_partner import Partner
     from gn_portal_parnian.parnian import ParnianTranslationFile
     from gn_portal_parnian.parnian import ParnianTranslationProject
     from gn_portal_parnian.parnian import ParnianTranslationEntry
@@ -21,4 +23,5 @@ else:
     ParnianTranslationFile = models.Model
     ParnianTranslationBranch = models.Model
     ParnianTranslationBranchLine = models.Model
+    Partner = models.Model
 

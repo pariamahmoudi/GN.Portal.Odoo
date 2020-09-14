@@ -48,6 +48,8 @@ class BatchUpdateWizard(models.TransientModel):
                     entry.quality = self.quality
                 if self.update_finalize:
                     entry.action_final()
+                if self.update_untranslatable:
+                    entry.action_untranslatable()
                 if self.add_to_branch:
                     branch = branch if branch else Parnian.branches(self).create({
                         'name':'noname'
