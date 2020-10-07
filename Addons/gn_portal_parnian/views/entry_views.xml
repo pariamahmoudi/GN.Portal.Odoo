@@ -1,0 +1,191 @@
+<odoo>
+  <data>
+
+
+    <!-- <record id="view_mrp_bom_filter" model="ir.ui.view">
+      <field name="name">mrp.bom.select</field>
+      <field name="model">mrp.bom</field>
+      <field name="arch" type="xml">
+        <search string="Search Bill Of Material">
+          <field name="code" string="Bill of Materials" filter_domain="['|', ('code', 'ilike', self), ('product_tmpl_id', 'ilike', self)]"/>
+          <field name="product_tmpl_id" string="Product"/>
+          <field name="bom_line_ids" string="Component"/>
+          <filter string="Manufacturing" name="normal" domain="[('type', '=', 'normal')]"/>
+          <filter string="Kit" name="phantom" domain="[('type', '=', 'phantom')]"/>
+          <separator/>
+          <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+          <group expand="0" string="Group By...">
+            <filter string="Product" name="product" domain="[]" context="{'group_by': 'product_tmpl_id'}"/>
+            <filter string='BoM Type' name="group_by_type" domain="[]" context="{'group_by' : 'type'}"/>
+            <filter string='Unit of Measure' name="default_unit_of_measure" domain="[]" context="{'group_by' : 'product_uom_id'}"/>
+            <filter string="Routing" name="routings" domain="[]" context="{'group_by': 'routing_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record> -->
+    <record id="view_translation_entry_filter" model="ir.ui.view">
+      <field name="name">translation entry filter</field>
+      <field name="model">gn.portal.parnian.translation.entry</field>
+      <field name="arch" type="xml">
+        <search string="Search Bill Of Material">
+          <field name="name" string="Entries" context="{'active_test':False}" filter_domain="['|', ('en', 'ilike', self), ('fa', 'ilike', self)]"/>
+          <filter string="CRM" name="CRM" domain="[('project_id', '=', 'CRM')]"/>
+          <filter string="SharPoint" name="SharePoint" domain="[('project_id', '=', 'SharePoint')]"/>
+          <filter string="Large" name="large" domain="[('size', '>', 50)]"/>
+          <filter string="High Priority" name="high" domain="[('priority', '=', 'high')]"/>
+          <filter string="Poor translation" name="high" domain="['|',('quality', '=', 'poor'),('quality','=','unknown')]"/>
+          <!-- <field name="code" string="Bill of Materials" filter_domain="['|', ('code', 'ilike', self), ('product_tmpl_id', 'ilike', self)]"/>
+          <field name="product_tmpl_id" string="Product"/>
+          <field name="bom_line_ids" string="Component"/>
+          <filter string="Manufacturing" name="normal" domain="[('type', '=', 'normal')]"/>
+          <filter string="Kit" name="phantom" domain="[('type', '=', 'phantom')]"/> -->
+          <separator/>
+          <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+          <group expand="0" string="Group By...">
+            <!-- <filter string="Product" name="product" domain="[]" context="{'group_by': 'product_tmpl_id'}"/>
+            <filter string='BoM Type' name="group_by_type" domain="[]" context="{'group_by' : 'type'}"/>
+            <filter string='Unit of Measure' name="default_unit_of_measure" domain="[]" context="{'group_by' : 'product_uom_id'}"/>
+            <filter string="Routing" name="routings" domain="[]" context="{'group_by': 'routing_id'}"/> -->
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="translation_entry_list">
+      <field name="name">Translation Entry list</field>
+      <field name="model">gn.portal.parnian.translation.entry</field>
+      <field name="arch" type="xml">
+        <tree>
+          <button name="action_like" type="object" icon="fa-thumbs-o-up"></button>
+          <button name="action_dislike" type="object" class="oe_stat_button" icon="fa-thumbs-o-down" string="Dislike"/>
+          <field name="id"/>
+          <field name ="state"/>
+          <field name ="priority"/>
+          <field name = "quality"/>
+          <field name ="score"/>
+          <field name = "size"/>
+          <field name = "en"/>
+          <field name = "fa"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View -->
+    <record model="ir.ui.view" id="translation_entry_form">
+      <field name="name">Translation Project Form</field>
+      <field name="model">gn.portal.parnian.translation.entry</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+
+            <button name="action_final" type="object" string="Finalize" states="inprogress" class="oe_highlight"/>
+            <button name="action_request" type="object" string="Requset Revision" states="draft" class="oe_highlight"/>
+            <button name="action_inprogress" type="object" string="In Progress" states="draft,request" class="oe_highlight"/>
+            <button name="action_draft" type="object" string="Reset to draft" states="inprogress,final" />
+            <field name="state" widget="statusbar"/>
+          </header>
+          <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button name="%(action_entry_commits)d" type="action" class="oe_stat_button" icon="fa-bars" string="Commits"/>
+              <button name="add_to_default_branch" type="object" class="oe_stat_button" icon="fa-plus-square" string="Add to Branch"/>
+              <button name="recalculate" type="object" class="oe_stat_button" icon="fa-calculator" string="Recalculate"/>
+              <button name="action_like" type="object" class="oe_stat_button" icon="fa-thumbs-o-up" string="Like"/>
+              <button name="action_dislike" type="object" class="oe_stat_button" icon="fa-thumbs-o-down" string="Dislike"/>
+
+            </div>
+
+            <div class="oe_title">
+              <h1>
+                <div>
+                  <span class="fa fa-thermometer-full" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('priority', '!=', 'high')]}"> High </span>
+                  <span class="fa fa-thermometer-empty" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('priority', 'not in', ('low','unknown'))]}"> Low </span>
+                  <span class="fa fa-thermometer-half " style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('priority', '!=', 'medium')]}"> Medium </span>
+                  <!--                   
+                <span class="fa fa-battery-half" style="margin-left:10px;margin-right:10px;"> Weak </span> <span> </span>
+                <span class="fa fa-thermometer-full" style="margin-left:10px;margin-right:10px;"> Weak </span> -->
+
+                  <span class="fa fa-thumbs-o-down" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('quality', 'in', ('good','perfect','acceptable'))]}">  </span>
+                  <span class="fa fa-thumbs-o-up" style="margin-left:10px;margin-right:10px;" attrs="{'invisible': [('quality', 'in', ('poor','unknown'))]}">  </span>
+                  <field name="score" readonly="1"/>
+
+
+                </div>
+                <field name="name" placeholder="Manufacturing Project" invisible="1"/>
+                <field name="display_name" placeholder="Manufacturing Project" nolabel="1" readonly="1"/>
+              </h1>
+              <field name="name" readonly="1"/>
+            </div>
+            <group>
+              <group>
+                <div>
+                  <field name ="en" nolabel="1" readonly="1"/>
+                </div>
+              </group>
+              <group>
+                <div style="background-color:bisque">
+                  <field name ="fa" style="text-align:right;direction:rtl;" nolabel="1"/>
+                </div>
+              </group>
+            </group>
+            <!-- <field name="value"/>
+          <field name="value2"/> -->
+          </sheet>
+          <footer>
+            <group>
+              <group>
+                <field name = "priority"/>
+                <field name = "quality"/>
+                <field name ="tag"/>
+                <field name ="score" readonly="1"/>
+                <field name ="last_calculated_on" readonly="1"/>
+                <field name ="no_reviews" readonly="1"/>
+                <field name ="no_likes" readonly="1"/>
+                <field name ="no_dislikes" readonly="1"/>
+                <field name ="untranslatable" readonly="0"/>
+              </group>
+              <group>
+                <field name ="file_id" readonly="0"/>
+                <field name ="project_id" readonly="0"/>
+
+              </group>
+            </group>
+          </footer>
+
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="entries_action_window">
+      <field name="name">Translation Entry</field>
+      <field name="res_model">gn.portal.parnian.translation.entry</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="projects_action_server">
+      <field name="name">parnian server</field>
+      <field name="model_id" ref="model_gn_portal_parnian_translation_project"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+
+
+
+  </data>
+</odoo>

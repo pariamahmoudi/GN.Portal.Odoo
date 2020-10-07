@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
+    <record model="ir.ui.view" id="gn_account_move_form">
+      <field name="name">GN_proforma_View</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+        <field name="invoice_origin" position="after">
+          <field name='gn_synch_data' string='SynchData'/>
+          <field name='gn_invoice_number' />
+          <field name='gn_official_invoice_index' />
+          <field name='gn_invoice_date' />
+        </field>
+      </field>
+    </record>
 
-  
+
   </data>
 </odoo>

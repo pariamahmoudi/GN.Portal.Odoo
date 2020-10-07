@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from . import models
-from . import Invoive
+from . import AccountInvoiceExtensions
 from . import Lot
-from . import Partner
-from . import Proforma
+from . import PartnerExtensions
+from . import ProductExtensions
+from . import SaleOrderExtensions

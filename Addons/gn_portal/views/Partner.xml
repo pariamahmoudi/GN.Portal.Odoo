@@ -9,11 +9,23 @@
         <!-- <field name="phone" position="after">
           
         </field> -->
+        <xpath expr="//field[@name='name']" position="after">
+          <h4>
+          <group col="2" attrs="{'invisible':  [('company_type', '=', 'company')]}">
+            <group>
+              <field name="gn_first_name" string="First Name" style="width:150px;"/>
+            </group>
+            <group>
+              <field name="gn_last_name" string="Last Name" style="width:150px;"/>
+            </group>
+          </group>
+          </h4>
+        </xpath>
         <field name="website" position="after">
-          <field name='GN_CommercialCode' string ="Commercial Code"/>
-          <field name='GN_NationalID' string ="National ID"/>
-          <field name='GN_Fax' string ="Fax"/>
-          <field name='GN_Telegram' string ="telegram"/>
+          <field name='gn_economic_code' string ="Economic Code"/>
+          <field name='gn_national_code' string ="National Code"/>
+          <field name='gn_salutation' string ="Salutation"/>
+          <field name='gn_fax' string ="Fax"/>
         </field>
       </field>
     </record>

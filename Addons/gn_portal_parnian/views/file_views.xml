@@ -1,0 +1,68 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="translation_file_list">
+      <field name="name">Translation File list</field>
+      <field name="model">gn.portal.parnian.translation.file</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View -->
+    <record model="ir.ui.view" id="translation_file_form">
+      <field name="name">Translation File Form</field>
+      <field name="model">gn.portal.parnian.translation.file</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <!--The oe_highlight class gives the button a red color when it is saved.
+		It is usually used to indicate the expected behaviour. -->
+            <!-- <button string="Generate name" type="object" name="generate_record_name" class="oe_highlight"/>
+            <button string="Generate password" type="object" name="generate_record_password"/>
+            <button string="Clear data" type="object" name="clear_record_data"/> -->
+          </header>
+          <sheet>
+            <field name="name"/>
+          </sheet>
+          <!-- <field name="value"/>
+          <field name="value2"/> -->
+
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="files_action_window">
+      <field name="name">Parnian File</field>
+      <field name="res_model">gn.portal.parnian.translation.file</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="projects_action_server">
+      <field name="name">parnian server</field>
+      <field name="model_id" ref="model_gn_portal_parnian_translation_project"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+
+
+
+  </data>
+</odoo>
