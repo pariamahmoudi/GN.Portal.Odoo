@@ -17,7 +17,7 @@
                         </group>
                         <group>
                             <group string="Internal Notes" attrs="{'invisible': [('Data_sheet', '=', 'type1')]}">
-                                <field name='test'/>
+                                <field name='test' />
                             </group>
                             <group/>
                         </group>

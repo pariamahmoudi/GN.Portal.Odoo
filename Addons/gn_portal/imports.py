@@ -7,9 +7,12 @@ if TYPE_CHECKING:
     from odoo.addons.product.models.product import ProductProduct
     from odoo.addons.product.models.product_template import ProductTemplate
     from odoo.addons.sale.models.sale import SaleOrder, SaleOrderLine
+    from odoo.addons.account.models.account_move import AccountMove, AccountMoveLine
 else:
     Partner = models.Model
     ProductTemplate = models.Model
     ProductProduct = models.Model
     SaleOrder = models.Model
     SaleOrderLine = models.Model
+    AccountMove = models.Model
+    AccountMoveLine = models.Model

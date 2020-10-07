@@ -1,1 +1,2 @@
-"C:\Program Files (x86)\Odoo 13.0\python\python" "C:\Program Files (x86)\Odoo 13.0\server\odoo-bin"
+REM "C:\Program Files (x86)\Odoo 13.0\python\python" "C:\Program Files (x86)\Odoo 13.0\server\odoo-bin" --logfile * --log-request --log-response 
+"C:\Program Files (x86)\Odoo 13.0\python\python" "C:\Program Files (x86)\Odoo 13.0\server\odoo-bin" --logfile *

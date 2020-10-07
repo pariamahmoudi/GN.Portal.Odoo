@@ -1,0 +1,405 @@
+2020-09-15 07:27:03,310 3608 INFO ? odoo: Odoo version 13.0-20200604 
+2020-09-15 07:27:03,311 3608 INFO ? odoo: Using configuration file at C:\Program Files (x86)\Odoo 13.0\server\odoo.conf 
+2020-09-15 07:27:03,311 3608 INFO ? odoo: addons paths: ['C:\\Program Files (x86)\\Odoo 13.0\\server\\odoo\\addons', 'c:\\users\\babak\\appdata\\local\\openerp s.a\\odoo\\addons\\13.0', 'c:\\program files (x86)\\odoo 13.0\\server\\odoo\\addons', 'd:\\source\\repos\\hvac\\src\\addons', 'c:\\program files (x86)\\odoo 13.0\\server\\addons', 'd:\\source\\repos\\gn.portal.odoo\\addons', 'd:\\source\\repos\\ramzineh\\src\\addons', 'd:\\source\\repos\\parodoo\\addons'] 
+2020-09-15 07:27:03,311 3608 INFO ? odoo: database: Babak@localhost:5432 
+2020-09-15 07:27:03,640 3608 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at C:\Program Files (x86)\Odoo 13.0\thirdparty\wkhtmltopdf.exe 
+2020-09-15 07:27:03,836 3608 INFO ? odoo.service.server: HTTP service (werkzeug) running on BabakHP.gnco.local:8069 
+2020-09-15 07:27:03,995 3608 INFO ? odoo.http: HTTP Configuring static files 
+2020-09-15 07:27:04,064 3608 INFO GNCO_DEV odoo.modules.loading: loading 1 modules... 
+2020-09-15 07:27:04,078 3608 INFO GNCO_DEV odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2020-09-15 07:27:04,155 3608 INFO GNCO_DEV odoo.modules.loading: loading 51 modules... 
+2020-09-15 07:27:05,264 3608 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_partnerledger has no _description 
+2020-09-15 07:27:05,264 3608 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_general_ledger has no _description 
+2020-09-15 07:27:05,264 3608 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_trialbalance has no _description 
+2020-09-15 07:27:05,264 3608 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_tax has no _description 
+2020-09-15 07:27:05,265 3608 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_agedpartnerbalance has no _description 
+2020-09-15 07:27:05,265 3608 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_journal has no _description 
+2020-09-15 07:27:05,265 3608 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_financial has no _description 
+2020-09-15 07:27:05,815 3608 INFO GNCO_DEV odoo.modules.loading: 51 modules loaded in 1.66s, 0 queries 
+2020-09-15 07:27:06,497 3608 WARNING GNCO_DEV odoo.fields: Field crossovered.budget.user_id: parameter 'oldname' is not longer supported; use an upgrade script instead. 
+2020-09-15 07:27:06,829 3608 INFO GNCO_DEV odoo.modules.loading: Modules loaded. 
+2020-09-15 07:27:06,837 3608 INFO GNCO_DEV odoo.addons.base.models.ir_http: Generating routing map for key None 
+2020-09-15 07:27:06,945 3608 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2020-09-15 07:30:09,235 20160 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.request:INFO" 
+2020-09-15 07:30:09,235 20160 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.response:INFO" 
+2020-09-15 07:30:09,235 20160 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2020-09-15 07:30:09,235 20160 DEBUG ? odoo.netsvc: logger level set: "odoo:DEBUG" 
+2020-09-15 07:30:09,235 20160 DEBUG ? odoo.netsvc: logger level set: "odoo.sql_db:INFO" 
+2020-09-15 07:30:09,235 20160 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2020-09-15 07:30:09,236 20160 INFO ? odoo: Odoo version 13.0-20200604 
+2020-09-15 07:30:09,236 20160 INFO ? odoo: Using configuration file at C:\Program Files (x86)\Odoo 13.0\server\odoo.conf 
+2020-09-15 07:30:09,236 20160 INFO ? odoo: addons paths: ['C:\\Program Files (x86)\\Odoo 13.0\\server\\odoo\\addons', 'c:\\users\\babak\\appdata\\local\\openerp s.a\\odoo\\addons\\13.0', 'c:\\program files (x86)\\odoo 13.0\\server\\odoo\\addons', 'd:\\source\\repos\\hvac\\src\\addons', 'c:\\program files (x86)\\odoo 13.0\\server\\addons', 'd:\\source\\repos\\gn.portal.odoo\\addons', 'd:\\source\\repos\\ramzineh\\src\\addons', 'd:\\source\\repos\\parodoo\\addons'] 
+2020-09-15 07:30:09,236 20160 INFO ? odoo: database: Babak@localhost:5432 
+2020-09-15 07:30:09,557 20160 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at C:\Program Files (x86)\Odoo 13.0\thirdparty\wkhtmltopdf.exe 
+2020-09-15 07:30:09,730 20160 DEBUG ? odoo.service.server: Setting signal handlers 
+2020-09-15 07:30:09,734 20160 DEBUG ? odoo.service.server: cron0 started! 
+2020-09-15 07:30:09,734 20160 DEBUG ? odoo.service.server: cron1 started! 
+2020-09-15 07:30:09,736 20160 INFO ? odoo.service.server: HTTP service (werkzeug) running on BabakHP.gnco.local:8069 
+2020-09-15 07:30:14,785 20160 DEBUG ? odoo.http: Loading account 
+2020-09-15 07:30:14,786 20160 DEBUG ? odoo.http: Loading account_bank_statement_import 
+2020-09-15 07:30:14,786 20160 DEBUG ? odoo.http: Loading account_check_printing 
+2020-09-15 07:30:14,788 20160 DEBUG ? odoo.http: Loading auth_oauth 
+2020-09-15 07:30:14,788 20160 DEBUG ? odoo.http: Loading auth_password_policy 
+2020-09-15 07:30:14,789 20160 DEBUG ? odoo.http: Loading auth_password_policy_signup 
+2020-09-15 07:30:14,789 20160 DEBUG ? odoo.http: Loading auth_signup 
+2020-09-15 07:30:14,790 20160 DEBUG ? odoo.http: Loading barcodes 
+2020-09-15 07:30:14,790 20160 DEBUG ? odoo.http: Loading base 
+2020-09-15 07:30:14,791 20160 DEBUG ? odoo.http: Loading base_automation 
+2020-09-15 07:30:14,792 20160 DEBUG ? odoo.http: Loading base_iban 
+2020-09-15 07:30:14,792 20160 DEBUG ? odoo.http: Loading base_import 
+2020-09-15 07:30:14,793 20160 DEBUG ? odoo.http: Loading base_setup 
+2020-09-15 07:30:14,793 20160 DEBUG ? odoo.http: Loading board 
+2020-09-15 07:30:14,794 20160 DEBUG ? odoo.http: Loading bus 
+2020-09-15 07:30:14,794 20160 DEBUG ? odoo.http: Loading calendar 
+2020-09-15 07:30:14,794 20160 DEBUG ? odoo.http: Loading contacts 
+2020-09-15 07:30:14,795 20160 DEBUG ? odoo.http: Loading crm 
+2020-09-15 07:30:14,795 20160 DEBUG ? odoo.http: Loading crm_iap_lead 
+2020-09-15 07:30:14,796 20160 DEBUG ? odoo.http: Loading digest 
+2020-09-15 07:30:14,797 20160 DEBUG ? odoo.http: Loading event 
+2020-09-15 07:30:14,797 20160 DEBUG ? odoo.http: Loading event_sale 
+2020-09-15 07:30:14,798 20160 DEBUG ? odoo.http: Loading fleet 
+2020-09-15 07:30:14,799 20160 DEBUG ? odoo.http: Loading gamification 
+2020-09-15 07:30:14,799 20160 DEBUG ? odoo.http: Loading google_calendar 
+2020-09-15 07:30:14,800 20160 DEBUG ? odoo.http: Loading google_drive 
+2020-09-15 07:30:14,800 20160 DEBUG ? odoo.http: Loading google_spreadsheet 
+2020-09-15 07:30:14,801 20160 DEBUG ? odoo.http: Loading hr 
+2020-09-15 07:30:14,801 20160 DEBUG ? odoo.http: Loading hr_attendance 
+2020-09-15 07:30:14,802 20160 DEBUG ? odoo.http: Loading hr_contract 
+2020-09-15 07:30:14,802 20160 DEBUG ? odoo.http: Loading hr_expense 
+2020-09-15 07:30:14,803 20160 DEBUG ? odoo.http: Loading hr_gamification 
+2020-09-15 07:30:14,804 20160 DEBUG ? odoo.http: Loading hr_holidays 
+2020-09-15 07:30:14,804 20160 DEBUG ? odoo.http: Loading hr_org_chart 
+2020-09-15 07:30:14,805 20160 DEBUG ? odoo.http: Loading hr_recruitment 
+2020-09-15 07:30:14,805 20160 DEBUG ? odoo.http: Loading hr_skills 
+2020-09-15 07:30:14,806 20160 DEBUG ? odoo.http: Loading hr_skills_slides 
+2020-09-15 07:30:14,806 20160 DEBUG ? odoo.http: Loading hr_skills_survey 
+2020-09-15 07:30:14,807 20160 DEBUG ? odoo.http: Loading hr_timesheet 
+2020-09-15 07:30:14,807 20160 DEBUG ? odoo.http: Loading hr_work_entry 
+2020-09-15 07:30:14,808 20160 DEBUG ? odoo.http: Loading iap 
+2020-09-15 07:30:14,809 20160 DEBUG ? odoo.http: Loading im_livechat 
+2020-09-15 07:30:14,809 20160 DEBUG ? odoo.http: Loading im_support 
+2020-09-15 07:30:14,810 20160 DEBUG ? odoo.http: Loading l10n_ae 
+2020-09-15 07:30:14,810 20160 DEBUG ? odoo.http: Loading l10n_ar 
+2020-09-15 07:30:14,811 20160 DEBUG ? odoo.http: Loading l10n_at 
+2020-09-15 07:30:14,811 20160 DEBUG ? odoo.http: Loading l10n_au 
+2020-09-15 07:30:14,812 20160 DEBUG ? odoo.http: Loading l10n_be 
+2020-09-15 07:30:14,812 20160 DEBUG ? odoo.http: Loading l10n_bo 
+2020-09-15 07:30:14,813 20160 DEBUG ? odoo.http: Loading l10n_br 
+2020-09-15 07:30:14,813 20160 DEBUG ? odoo.http: Loading l10n_ca 
+2020-09-15 07:30:14,814 20160 DEBUG ? odoo.http: Loading l10n_ch 
+2020-09-15 07:30:14,814 20160 DEBUG ? odoo.http: Loading l10n_cl 
+2020-09-15 07:30:14,814 20160 DEBUG ? odoo.http: Loading l10n_cn 
+2020-09-15 07:30:14,815 20160 DEBUG ? odoo.http: Loading l10n_cn_city 
+2020-09-15 07:30:14,816 20160 DEBUG ? odoo.http: Loading l10n_co 
+2020-09-15 07:30:14,816 20160 DEBUG ? odoo.http: Loading l10n_co_pos 
+2020-09-15 07:30:14,816 20160 DEBUG ? odoo.http: Loading l10n_cr 
+2020-09-15 07:30:14,817 20160 DEBUG ? odoo.http: Loading l10n_de 
+2020-09-15 07:30:14,817 20160 DEBUG ? odoo.http: Loading l10n_dk 
+2020-09-15 07:30:14,818 20160 DEBUG ? odoo.http: Loading l10n_do 
+2020-09-15 07:30:14,818 20160 DEBUG ? odoo.http: Loading l10n_dz 
+2020-09-15 07:30:14,819 20160 DEBUG ? odoo.http: Loading l10n_ec 
+2020-09-15 07:30:14,819 20160 DEBUG ? odoo.http: Loading l10n_es 
+2020-09-15 07:30:14,819 20160 DEBUG ? odoo.http: Loading l10n_et 
+2020-09-15 07:30:14,820 20160 DEBUG ? odoo.http: Loading l10n_fi 
+2020-09-15 07:30:14,821 20160 DEBUG ? odoo.http: Loading l10n_fr 
+2020-09-15 07:30:14,821 20160 DEBUG ? odoo.http: Loading l10n_fr_pos_cert 
+2020-09-15 07:30:14,822 20160 DEBUG ? odoo.http: Loading l10n_generic_coa 
+2020-09-15 07:30:14,822 20160 DEBUG ? odoo.http: Loading l10n_gr 
+2020-09-15 07:30:14,823 20160 DEBUG ? odoo.http: Loading l10n_gt 
+2020-09-15 07:30:14,823 20160 DEBUG ? odoo.http: Loading l10n_hk 
+2020-09-15 07:30:14,824 20160 DEBUG ? odoo.http: Loading l10n_hn 
+2020-09-15 07:30:14,824 20160 DEBUG ? odoo.http: Loading l10n_hr 
+2020-09-15 07:30:14,824 20160 DEBUG ? odoo.http: Loading l10n_hu 
+2020-09-15 07:30:14,825 20160 DEBUG ? odoo.http: Loading l10n_id 
+2020-09-15 07:30:14,825 20160 DEBUG ? odoo.http: Loading l10n_ie 
+2020-09-15 07:30:14,826 20160 DEBUG ? odoo.http: Loading l10n_in 
+2020-09-15 07:30:14,827 20160 DEBUG ? odoo.http: Loading l10n_it 
+2020-09-15 07:30:14,828 20160 DEBUG ? odoo.http: Loading l10n_jp 
+2020-09-15 07:30:14,829 20160 DEBUG ? odoo.http: Loading l10n_lt 
+2020-09-15 07:30:14,829 20160 DEBUG ? odoo.http: Loading l10n_lu 
+2020-09-15 07:30:14,829 20160 DEBUG ? odoo.http: Loading l10n_ma 
+2020-09-15 07:30:14,830 20160 DEBUG ? odoo.http: Loading l10n_mn 
+2020-09-15 07:30:14,830 20160 DEBUG ? odoo.http: Loading l10n_mx 
+2020-09-15 07:30:14,831 20160 DEBUG ? odoo.http: Loading l10n_nl 
+2020-09-15 07:30:14,831 20160 DEBUG ? odoo.http: Loading l10n_no 
+2020-09-15 07:30:14,832 20160 DEBUG ? odoo.http: Loading l10n_nz 
+2020-09-15 07:30:14,832 20160 DEBUG ? odoo.http: Loading l10n_pa 
+2020-09-15 07:30:14,832 20160 DEBUG ? odoo.http: Loading l10n_pe 
+2020-09-15 07:30:14,833 20160 DEBUG ? odoo.http: Loading l10n_pl 
+2020-09-15 07:30:14,833 20160 DEBUG ? odoo.http: Loading l10n_ro 
+2020-09-15 07:30:14,834 20160 DEBUG ? odoo.http: Loading l10n_sa 
+2020-09-15 07:30:14,834 20160 DEBUG ? odoo.http: Loading l10n_se 
+2020-09-15 07:30:14,835 20160 DEBUG ? odoo.http: Loading l10n_sg 
+2020-09-15 07:30:14,835 20160 DEBUG ? odoo.http: Loading l10n_si 
+2020-09-15 07:30:14,836 20160 DEBUG ? odoo.http: Loading l10n_th 
+2020-09-15 07:30:14,836 20160 DEBUG ? odoo.http: Loading l10n_tr 
+2020-09-15 07:30:14,837 20160 DEBUG ? odoo.http: Loading l10n_ua 
+2020-09-15 07:30:14,837 20160 DEBUG ? odoo.http: Loading l10n_uk 
+2020-09-15 07:30:14,837 20160 DEBUG ? odoo.http: Loading l10n_us 
+2020-09-15 07:30:14,838 20160 DEBUG ? odoo.http: Loading l10n_uy 
+2020-09-15 07:30:14,838 20160 DEBUG ? odoo.http: Loading l10n_ve 
+2020-09-15 07:30:14,839 20160 DEBUG ? odoo.http: Loading l10n_vn 
+2020-09-15 07:30:14,839 20160 DEBUG ? odoo.http: Loading l10n_za 
+2020-09-15 07:30:14,840 20160 DEBUG ? odoo.http: Loading lunch 
+2020-09-15 07:30:14,840 20160 DEBUG ? odoo.http: Loading mail 
+2020-09-15 07:30:14,841 20160 DEBUG ? odoo.http: Loading mail_bot 
+2020-09-15 07:30:14,841 20160 DEBUG ? odoo.http: Loading maintenance 
+2020-09-15 07:30:14,842 20160 DEBUG ? odoo.http: Loading mass_mailing 
+2020-09-15 07:30:14,843 20160 DEBUG ? odoo.http: Loading mass_mailing_sms 
+2020-09-15 07:30:14,844 20160 DEBUG ? odoo.http: Loading membership 
+2020-09-15 07:30:14,844 20160 DEBUG ? odoo.http: Loading mrp 
+2020-09-15 07:30:14,845 20160 DEBUG ? odoo.http: Loading note 
+2020-09-15 07:30:14,845 20160 DEBUG ? odoo.http: Loading odoo_referral 
+2020-09-15 07:30:14,846 20160 DEBUG ? odoo.http: Loading pad 
+2020-09-15 07:30:14,847 20160 DEBUG ? odoo.http: Loading partner_autocomplete 
+2020-09-15 07:30:14,847 20160 DEBUG ? odoo.http: Loading payment 
+2020-09-15 07:30:14,848 20160 DEBUG ? odoo.http: Loading payment_adyen 
+2020-09-15 07:30:14,848 20160 DEBUG ? odoo.http: Loading payment_alipay 
+2020-09-15 07:30:14,848 20160 DEBUG ? odoo.http: Loading payment_authorize 
+2020-09-15 07:30:14,849 20160 DEBUG ? odoo.http: Loading payment_buckaroo 
+2020-09-15 07:30:14,849 20160 DEBUG ? odoo.http: Loading payment_ingenico 
+2020-09-15 07:30:14,850 20160 DEBUG ? odoo.http: Loading payment_paypal 
+2020-09-15 07:30:14,850 20160 DEBUG ? odoo.http: Loading payment_payulatam 
+2020-09-15 07:30:14,850 20160 DEBUG ? odoo.http: Loading payment_payumoney 
+2020-09-15 07:30:14,851 20160 DEBUG ? odoo.http: Loading payment_sips 
+2020-09-15 07:30:14,851 20160 DEBUG ? odoo.http: Loading payment_stripe 
+2020-09-15 07:30:14,852 20160 DEBUG ? odoo.http: Loading payment_test 
+2020-09-15 07:30:14,852 20160 DEBUG ? odoo.http: Loading payment_transfer 
+2020-09-15 07:30:14,853 20160 DEBUG ? odoo.http: Loading point_of_sale 
+2020-09-15 07:30:14,853 20160 DEBUG ? odoo.http: Loading portal 
+2020-09-15 07:30:14,853 20160 DEBUG ? odoo.http: Loading pos_adyen 
+2020-09-15 07:30:14,854 20160 DEBUG ? odoo.http: Loading pos_cache 
+2020-09-15 07:30:14,854 20160 DEBUG ? odoo.http: Loading pos_cash_rounding 
+2020-09-15 07:30:14,855 20160 DEBUG ? odoo.http: Loading pos_discount 
+2020-09-15 07:30:14,855 20160 DEBUG ? odoo.http: Loading pos_epson_printer 
+2020-09-15 07:30:14,856 20160 DEBUG ? odoo.http: Loading pos_epson_printer_restaurant 
+2020-09-15 07:30:14,856 20160 DEBUG ? odoo.http: Loading pos_hr 
+2020-09-15 07:30:14,857 20160 DEBUG ? odoo.http: Loading pos_mercury 
+2020-09-15 07:30:14,858 20160 DEBUG ? odoo.http: Loading pos_reprint 
+2020-09-15 07:30:14,858 20160 DEBUG ? odoo.http: Loading pos_restaurant 
+2020-09-15 07:30:14,859 20160 DEBUG ? odoo.http: Loading pos_six 
+2020-09-15 07:30:14,859 20160 DEBUG ? odoo.http: Loading product 
+2020-09-15 07:30:14,860 20160 DEBUG ? odoo.http: Loading product_email_template 
+2020-09-15 07:30:14,860 20160 DEBUG ? odoo.http: Loading product_expiry 
+2020-09-15 07:30:14,861 20160 DEBUG ? odoo.http: Loading product_matrix 
+2020-09-15 07:30:14,861 20160 DEBUG ? odoo.http: Loading project 
+2020-09-15 07:30:14,862 20160 DEBUG ? odoo.http: Loading purchase 
+2020-09-15 07:30:14,863 20160 DEBUG ? odoo.http: Loading purchase_product_matrix 
+2020-09-15 07:30:14,863 20160 DEBUG ? odoo.http: Loading rating 
+2020-09-15 07:30:14,864 20160 DEBUG ? odoo.http: Loading repair 
+2020-09-15 07:30:14,864 20160 DEBUG ? odoo.http: Loading resource 
+2020-09-15 07:30:14,865 20160 DEBUG ? odoo.http: Loading sale 
+2020-09-15 07:30:14,865 20160 DEBUG ? odoo.http: Loading sale_expense 
+2020-09-15 07:30:14,866 20160 DEBUG ? odoo.http: Loading sale_management 
+2020-09-15 07:30:14,867 20160 DEBUG ? odoo.http: Loading sale_order_product_recommendation 
+2020-09-15 07:30:14,867 20160 DEBUG ? odoo.http: Loading sale_product_configurator 
+2020-09-15 07:30:14,867 20160 DEBUG ? odoo.http: Loading sale_product_matrix 
+2020-09-15 07:30:14,868 20160 DEBUG ? odoo.http: Loading sale_stock 
+2020-09-15 07:30:14,869 20160 DEBUG ? odoo.http: Loading sale_timesheet 
+2020-09-15 07:30:14,869 20160 DEBUG ? odoo.http: Loading sales_team 
+2020-09-15 07:30:14,870 20160 DEBUG ? odoo.http: Loading sms 
+2020-09-15 07:30:14,870 20160 DEBUG ? odoo.http: Loading snailmail 
+2020-09-15 07:30:14,870 20160 DEBUG ? odoo.http: Loading snailmail_account 
+2020-09-15 07:30:14,871 20160 DEBUG ? odoo.http: Loading stock 
+2020-09-15 07:30:14,873 20160 DEBUG ? odoo.http: Loading survey 
+2020-09-15 07:30:14,873 20160 DEBUG ? odoo.http: Loading test_assetsbundle 
+2020-09-15 07:30:14,874 20160 DEBUG ? odoo.http: Loading test_exceptions 
+2020-09-15 07:30:14,876 20160 DEBUG ? odoo.http: Loading test_main_flows 
+2020-09-15 07:30:14,876 20160 DEBUG ? odoo.http: Loading test_new_api 
+2020-09-15 07:30:14,877 20160 DEBUG ? odoo.http: Loading test_website 
+2020-09-15 07:30:14,878 20160 DEBUG ? odoo.http: Loading theme_bootswatch 
+2020-09-15 07:30:14,878 20160 DEBUG ? odoo.http: Loading theme_default 
+2020-09-15 07:30:14,879 20160 DEBUG ? odoo.http: Loading transifex 
+2020-09-15 07:30:14,879 20160 DEBUG ? odoo.http: Loading utm 
+2020-09-15 07:30:14,880 20160 DEBUG ? odoo.http: Loading web 
+2020-09-15 07:30:14,880 20160 DEBUG ? odoo.http: Loading web_diagram 
+2020-09-15 07:30:14,881 20160 DEBUG ? odoo.http: Loading web_editor 
+2020-09-15 07:30:14,881 20160 DEBUG ? odoo.http: Loading web_kanban_gauge 
+2020-09-15 07:30:14,881 20160 DEBUG ? odoo.http: Loading web_tour 
+2020-09-15 07:30:14,882 20160 DEBUG ? odoo.http: Loading web_unsplash 
+2020-09-15 07:30:14,882 20160 DEBUG ? odoo.http: Loading website 
+2020-09-15 07:30:14,883 20160 DEBUG ? odoo.http: Loading website_blog 
+2020-09-15 07:30:14,883 20160 DEBUG ? odoo.http: Loading website_crm 
+2020-09-15 07:30:14,884 20160 DEBUG ? odoo.http: Loading website_crm_partner_assign 
+2020-09-15 07:30:14,884 20160 DEBUG ? odoo.http: Loading website_customer 
+2020-09-15 07:30:14,885 20160 DEBUG ? odoo.http: Loading website_event 
+2020-09-15 07:30:14,885 20160 DEBUG ? odoo.http: Loading website_event_questions 
+2020-09-15 07:30:14,886 20160 DEBUG ? odoo.http: Loading website_event_sale 
+2020-09-15 07:30:14,886 20160 DEBUG ? odoo.http: Loading website_event_track 
+2020-09-15 07:30:14,886 20160 DEBUG ? odoo.http: Loading website_form 
+2020-09-15 07:30:14,887 20160 DEBUG ? odoo.http: Loading website_form_project 
+2020-09-15 07:30:14,887 20160 DEBUG ? odoo.http: Loading website_forum 
+2020-09-15 07:30:14,888 20160 DEBUG ? odoo.http: Loading website_gengo 
+2020-09-15 07:30:14,888 20160 DEBUG ? odoo.http: Loading website_google_map 
+2020-09-15 07:30:14,889 20160 DEBUG ? odoo.http: Loading website_hr_recruitment 
+2020-09-15 07:30:14,889 20160 DEBUG ? odoo.http: Loading website_links 
+2020-09-15 07:30:14,890 20160 DEBUG ? odoo.http: Loading website_livechat 
+2020-09-15 07:30:14,890 20160 DEBUG ? odoo.http: Loading website_mail 
+2020-09-15 07:30:14,890 20160 DEBUG ? odoo.http: Loading website_mail_channel 
+2020-09-15 07:30:14,891 20160 DEBUG ? odoo.http: Loading website_mass_mailing 
+2020-09-15 07:30:14,892 20160 DEBUG ? odoo.http: Loading website_membership 
+2020-09-15 07:30:14,892 20160 DEBUG ? odoo.http: Loading website_partner 
+2020-09-15 07:30:14,893 20160 DEBUG ? odoo.http: Loading website_payment 
+2020-09-15 07:30:14,893 20160 DEBUG ? odoo.http: Loading website_profile 
+2020-09-15 07:30:14,894 20160 DEBUG ? odoo.http: Loading website_rating 
+2020-09-15 07:30:14,894 20160 DEBUG ? odoo.http: Loading website_sale 
+2020-09-15 07:30:14,895 20160 DEBUG ? odoo.http: Loading website_sale_comparison 
+2020-09-15 07:30:14,895 20160 DEBUG ? odoo.http: Loading website_sale_coupon 
+2020-09-15 07:30:14,895 20160 DEBUG ? odoo.http: Loading website_sale_coupon_delivery 
+2020-09-15 07:30:14,896 20160 DEBUG ? odoo.http: Loading website_sale_delivery 
+2020-09-15 07:30:14,896 20160 DEBUG ? odoo.http: Loading website_sale_digital 
+2020-09-15 07:30:14,897 20160 DEBUG ? odoo.http: Loading website_sale_management 
+2020-09-15 07:30:14,897 20160 DEBUG ? odoo.http: Loading website_sale_product_configurator 
+2020-09-15 07:30:14,898 20160 DEBUG ? odoo.http: Loading website_sale_slides 
+2020-09-15 07:30:14,898 20160 DEBUG ? odoo.http: Loading website_sale_stock 
+2020-09-15 07:30:14,899 20160 DEBUG ? odoo.http: Loading website_sale_wishlist 
+2020-09-15 07:30:14,899 20160 DEBUG ? odoo.http: Loading website_slides 
+2020-09-15 07:30:14,900 20160 DEBUG ? odoo.http: Loading website_slides_forum 
+2020-09-15 07:30:14,900 20160 DEBUG ? odoo.http: Loading website_slides_survey 
+2020-09-15 07:30:14,901 20160 DEBUG ? odoo.http: Loading website_theme_install 
+2020-09-15 07:30:14,901 20160 DEBUG ? odoo.http: Loading website_twitter 
+2020-09-15 07:30:14,916 20160 DEBUG ? odoo.http: Loading hvac_mrp_project 
+2020-09-15 07:30:14,918 20160 DEBUG ? odoo.http: Loading account_check 
+2020-09-15 07:30:14,918 20160 DEBUG ? odoo.http: Loading account_payment_group 
+2020-09-15 07:30:14,919 20160 DEBUG ? odoo.http: Loading accounting_pdf_reports 
+2020-09-15 07:30:14,920 20160 DEBUG ? odoo.http: Loading activity_validation 
+2020-09-15 07:30:14,920 20160 DEBUG ? odoo.http: Loading base_accounting_kit 
+2020-09-15 07:30:14,921 20160 DEBUG ? odoo.http: Loading document_page 
+2020-09-15 07:30:14,922 20160 DEBUG ? odoo.http: Loading document_page_project 
+2020-09-15 07:30:14,922 20160 DEBUG ? odoo.http: Loading knowledge 
+2020-09-15 07:30:14,923 20160 DEBUG ? odoo.http: Loading mrp_bom_comparison 
+2020-09-15 07:30:14,923 20160 DEBUG ? odoo.http: Loading om_account_accountant 
+2020-09-15 07:30:14,924 20160 DEBUG ? odoo.http: Loading om_account_asset 
+2020-09-15 07:30:14,924 20160 DEBUG ? odoo.http: Loading om_account_budget 
+2020-09-15 07:30:14,925 20160 DEBUG ? odoo.http: Loading om_hr_payroll 
+2020-09-15 07:30:14,925 20160 DEBUG ? odoo.http: Loading om_hr_payroll_account 
+2020-09-15 07:30:14,926 20160 DEBUG ? odoo.http: Loading plm 
+2020-09-15 07:30:14,926 20160 DEBUG ? odoo.http: Loading plm_auto_engcode 
+2020-09-15 07:30:14,927 20160 DEBUG ? odoo.http: Loading plm_auto_internalref 
+2020-09-15 07:30:14,927 20160 DEBUG ? odoo.http: Loading plm_automate_normal_bom 
+2020-09-15 07:30:14,928 20160 DEBUG ? odoo.http: Loading plm_automated_convertion 
+2020-09-15 07:30:14,928 20160 DEBUG ? odoo.http: Loading plm_automatic_weight 
+2020-09-15 07:30:14,929 20160 DEBUG ? odoo.http: Loading plm_box 
+2020-09-15 07:30:14,929 20160 DEBUG ? odoo.http: Loading plm_client_customprocedure 
+2020-09-15 07:30:14,930 20160 DEBUG ? odoo.http: Loading plm_compare_bom 
+2020-09-15 07:30:14,930 20160 DEBUG ? odoo.http: Loading plm_cutted_parts 
+2020-09-15 07:30:14,930 20160 DEBUG ? odoo.http: Loading plm_date_bom 
+2020-09-15 07:30:14,931 20160 DEBUG ? odoo.http: Loading plm_document_multi_site 
+2020-09-15 07:30:14,931 20160 DEBUG ? odoo.http: Loading plm_engineering 
+2020-09-15 07:30:14,932 20160 DEBUG ? odoo.http: Loading plm_pack_and_go 
+2020-09-15 07:30:14,932 20160 DEBUG ? odoo.http: Loading plm_pdf_workorder 
+2020-09-15 07:30:14,933 20160 DEBUG ? odoo.http: Loading plm_product_description_language_helper 
+2020-09-15 07:30:14,933 20160 DEBUG ? odoo.http: Loading plm_project 
+2020-09-15 07:30:14,934 20160 DEBUG ? odoo.http: Loading plm_report_language_helper 
+2020-09-15 07:30:14,934 20160 DEBUG ? odoo.http: Loading plm_sale_fix 
+2020-09-15 07:30:14,935 20160 DEBUG ? odoo.http: Loading plm_spare 
+2020-09-15 07:30:14,935 20160 DEBUG ? odoo.http: Loading plm_suspended 
+2020-09-15 07:30:14,936 20160 DEBUG ? odoo.http: Loading plm_web_revision 
+2020-09-15 07:30:14,936 20160 DEBUG ? odoo.http: Loading project_category 
+2020-09-15 07:30:14,936 20160 DEBUG ? odoo.http: Loading project_description 
+2020-09-15 07:30:14,937 20160 DEBUG ? odoo.http: Loading project_hr 
+2020-09-15 07:30:14,937 20160 DEBUG ? odoo.http: Loading project_key 
+2020-09-15 07:30:14,938 20160 DEBUG ? odoo.http: Loading project_list 
+2020-09-15 07:30:14,939 20160 DEBUG ? odoo.http: Loading project_parent_task_filter 
+2020-09-15 07:30:14,939 20160 DEBUG ? odoo.http: Loading project_role 
+2020-09-15 07:30:14,940 20160 DEBUG ? odoo.http: Loading project_stage_closed 
+2020-09-15 07:30:14,940 20160 DEBUG ? odoo.http: Loading project_status 
+2020-09-15 07:30:14,941 20160 DEBUG ? odoo.http: Loading project_tag 
+2020-09-15 07:30:14,941 20160 DEBUG ? odoo.http: Loading project_task_add_very_high 
+2020-09-15 07:30:14,941 20160 DEBUG ? odoo.http: Loading project_task_code 
+2020-09-15 07:30:14,942 20160 DEBUG ? odoo.http: Loading project_task_default_stage 
+2020-09-15 07:30:14,942 20160 DEBUG ? odoo.http: Loading project_task_dependency 
+2020-09-15 07:30:14,943 20160 DEBUG ? odoo.http: Loading project_task_material 
+2020-09-15 07:30:14,943 20160 DEBUG ? odoo.http: Loading project_timeline 
+2020-09-15 07:30:14,944 20160 DEBUG ? odoo.http: Loading project_timeline_hr_timesheet 
+2020-09-15 07:30:14,944 20160 DEBUG ? odoo.http: Loading project_timeline_task_dependency 
+2020-09-15 07:30:14,945 20160 DEBUG ? odoo.http: Loading tis_web_arabic 
+2020-09-15 07:30:14,945 20160 DEBUG ? odoo.http: Loading web_timeline 
+2020-09-15 07:30:14,946 20160 DEBUG ? odoo.http: Loading gn_portal_parnian 
+2020-09-15 07:30:14,948 20160 DEBUG ? odoo.http: Loading po_persian_calendar 
+2020-09-15 07:30:14,948 20160 INFO ? odoo.http: HTTP Configuring static files 
+2020-09-15 07:30:14,965 20160 DEBUG ? odoo.http: HTTP sessions stored in: C:\Users\babak\AppData\Local\OpenERP S.A\Odoo\sessions 
+2020-09-15 07:30:15,011 20160 DEBUG GNCO_DEV odoo.modules.registry: Multiprocess load registry signaling: [Registry: 12] [Cache: 89] 
+2020-09-15 07:30:15,017 20160 INFO GNCO_DEV odoo.modules.loading: loading 1 modules... 
+2020-09-15 07:30:15,018 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module base (1/1) 
+2020-09-15 07:30:15,032 20160 INFO GNCO_DEV odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2020-09-15 07:30:15,105 20160 DEBUG GNCO_DEV odoo.modules.loading: Updating graph with 50 more modules 
+2020-09-15 07:30:15,105 20160 INFO GNCO_DEV odoo.modules.loading: loading 51 modules... 
+2020-09-15 07:30:15,105 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module uom (2/51) 
+2020-09-15 07:30:15,113 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module web (3/51) 
+2020-09-15 07:30:15,121 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module barcodes (4/51) 
+2020-09-15 07:30:15,134 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module base_import (5/51) 
+2020-09-15 07:30:15,184 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module base_setup (6/51) 
+2020-09-15 07:30:15,199 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module bus (7/51) 
+2020-09-15 07:30:15,217 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module http_routing (8/51) 
+2020-09-15 07:30:15,238 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module odoo_referral (9/51) 
+2020-09-15 07:30:15,249 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module resource (10/51) 
+2020-09-15 07:30:15,282 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module utm (11/51) 
+2020-09-15 07:30:15,294 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module web_diagram (12/51) 
+2020-09-15 07:30:15,304 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module web_editor (13/51) 
+2020-09-15 07:30:15,343 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module web_kanban_gauge (14/51) 
+2020-09-15 07:30:15,347 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module web_tour (15/51) 
+2020-09-15 07:30:15,357 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module iap (16/51) 
+2020-09-15 07:30:15,368 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module mail (17/51) 
+2020-09-15 07:30:15,498 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module web_unsplash (18/51) 
+2020-09-15 07:30:15,517 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module analytic (19/51) 
+2020-09-15 07:30:15,528 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module auth_signup (20/51) 
+2020-09-15 07:30:15,547 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module fetchmail (21/51) 
+2020-09-15 07:30:15,567 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module partner_autocomplete (22/51) 
+2020-09-15 07:30:15,583 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module phone_validation (23/51) 
+2020-09-15 07:30:15,606 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module product (24/51) 
+2020-09-15 07:30:15,648 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module sales_team (25/51) 
+2020-09-15 07:30:15,662 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module snailmail (26/51) 
+2020-09-15 07:30:15,700 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module portal (27/51) 
+2020-09-15 07:30:15,738 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module sms (28/51) 
+2020-09-15 07:30:15,793 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module stock (29/51) 
+2020-09-15 07:30:15,923 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module digest (30/51) 
+2020-09-15 07:30:15,948 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module stock_sms (31/51) 
+2020-09-15 07:30:15,970 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module account (32/51) 
+2020-09-15 07:30:16,118 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module account_bank_statement_import (33/51) 
+2020-09-15 07:30:16,136 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module account_facturx (34/51) 
+2020-09-15 07:30:16,149 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module accounting_pdf_reports (35/51) 
+2020-09-15 07:30:16,207 20160 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_partnerledger has no _description 
+2020-09-15 07:30:16,207 20160 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_general_ledger has no _description 
+2020-09-15 07:30:16,208 20160 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_trialbalance has no _description 
+2020-09-15 07:30:16,208 20160 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_tax has no _description 
+2020-09-15 07:30:16,208 20160 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_agedpartnerbalance has no _description 
+2020-09-15 07:30:16,208 20160 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_journal has no _description 
+2020-09-15 07:30:16,208 20160 WARNING GNCO_DEV odoo.models: The model report.accounting_pdf_reports.report_financial has no _description 
+2020-09-15 07:30:16,209 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module base_iban (36/51) 
+2020-09-15 07:30:16,220 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module l10n_multilang (37/51) 
+2020-09-15 07:30:16,235 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module om_account_asset (38/51) 
+2020-09-15 07:30:16,272 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module om_account_budget (39/51) 
+2020-09-15 07:30:16,288 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module payment (40/51) 
+2020-09-15 07:30:16,336 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module snailmail_account (41/51) 
+2020-09-15 07:30:16,456 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module stock_account (42/51) 
+2020-09-15 07:30:16,510 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module account_payment (43/51) 
+2020-09-15 07:30:16,528 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module l10n_ca (44/51) 
+2020-09-15 07:30:16,539 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module om_account_accountant (45/51) 
+2020-09-15 07:30:16,552 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module payment_transfer (46/51) 
+2020-09-15 07:30:16,570 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module sale (47/51) 
+2020-09-15 07:30:16,660 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module sale_management (48/51) 
+2020-09-15 07:30:16,688 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module sale_stock (49/51) 
+2020-09-15 07:30:16,737 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module gn_portal (50/51) 
+2020-09-15 07:30:16,778 20160 DEBUG GNCO_DEV odoo.modules.loading: loading module procurement_jit (51/51) 
+2020-09-15 07:30:16,786 20160 INFO GNCO_DEV odoo.modules.loading: 51 modules loaded in 1.68s, 0 queries 
+2020-09-15 07:30:17,510 20160 WARNING GNCO_DEV odoo.fields: Field crossovered.budget.user_id: parameter 'oldname' is not longer supported; use an upgrade script instead. 
+2020-09-15 07:30:17,857 20160 INFO GNCO_DEV odoo.modules.loading: Modules loaded. 
+2020-09-15 07:30:17,864 20160 DEBUG GNCO_DEV odoo.modules.registry: Multiprocess signaling check: [Registry - 12 -> 12] [Cache - 89 -> 89] 
+2020-09-15 07:30:17,865 20160 INFO GNCO_DEV odoo.addons.base.models.ir_http: Generating routing map for key None 
+2020-09-15 07:30:17,973 20160 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2020-09-15 07:30:47,130 4068 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.request:INFO" 
+2020-09-15 07:30:47,130 4068 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.response:INFO" 
+2020-09-15 07:30:47,130 4068 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2020-09-15 07:30:47,130 4068 DEBUG ? odoo.netsvc: logger level set: "odoo:DEBUG" 
+2020-09-15 07:30:47,131 4068 DEBUG ? odoo.netsvc: logger level set: "odoo.sql_db:INFO" 
+2020-09-15 07:30:47,131 4068 DEBUG ? odoo.netsvc: logger level set: ":INFO" 
+2020-09-15 07:30:47,131 4068 INFO ? odoo: Odoo version 13.0-20200604 
+2020-09-15 07:30:47,131 4068 INFO ? odoo: Using configuration file at C:\Program Files (x86)\Odoo 13.0\server\odoo.conf 
+2020-09-15 07:30:47,131 4068 INFO ? odoo: addons paths: ['C:\\Program Files (x86)\\Odoo 13.0\\server\\odoo\\addons', 'c:\\users\\babak\\appdata\\local\\openerp s.a\\odoo\\addons\\13.0', 'c:\\program files (x86)\\odoo 13.0\\server\\odoo\\addons', 'd:\\source\\repos\\hvac\\src\\addons', 'c:\\program files (x86)\\odoo 13.0\\server\\addons', 'd:\\source\\repos\\gn.portal.odoo\\addons', 'd:\\source\\repos\\ramzineh\\src\\addons', 'd:\\source\\repos\\parodoo\\addons'] 
+2020-09-15 07:30:47,132 4068 INFO ? odoo: database: Babak@localhost:5432 
+2020-09-15 07:30:47,450 4068 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at C:\Program Files (x86)\Odoo 13.0\thirdparty\wkhtmltopdf.exe 
+2020-09-15 07:30:47,666 4068 DEBUG ? odoo.service.server: Setting signal handlers 
+2020-09-15 07:30:47,669 4068 DEBUG ? odoo.service.server: cron0 started! 
+2020-09-15 07:30:47,670 4068 DEBUG ? odoo.service.server: cron1 started! 
+2020-09-15 07:30:47,673 4068 INFO ? odoo.service.server: HTTP service (werkzeug) running on BabakHP.gnco.local:8069 

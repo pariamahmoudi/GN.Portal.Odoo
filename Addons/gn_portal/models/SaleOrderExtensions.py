@@ -23,6 +23,25 @@ class SaleOrderExtensions(SaleOrder):
     gn_override = fields.Char(compute=_compute_overrides)
     gn_quotenumber = fields.Integer(string="Quote No.")
 
+    def create_invoice(self, args=False):
+        print('create_invoice')
+        for order in self:
+            m = self.env['sale.advance.payment.inv'].create({}).with_context({'active_ids':order.id})
+            #self._context['active_ids'] = order.id
+            m.create_invoices()
+            
+
+        return True
+    def some_action(self, args=False):
+        print('some_action')
+        for order in self:
+            _o:SaleOrderExtensions = order
+            print(_o.name)
+        return True
+        
+
+    
+
 
 class SaleOrderLineExtensions(SaleOrderLine):
     _inherit = 'sale.order.line'
