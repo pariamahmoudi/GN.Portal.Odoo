@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+ <record id="gnco_pdf.gnco_paper_format" model="report.paperformat">
+      <field name="name">gnco paper format</field>
+      <field name="default" eval="True"/>
+      <field name="format">custom</field>
+      <field name="page_height">297</field>
+      <field name="page_width">210</field>
+      <field name="orientation">Portrait</field>
+      <field name="margin_top">0</field>
+      <field name="margin_bottom">0</field>
+      <field name="margin_left">0</field>
+      <field name="margin_right">0</field>
+      <field name="header_line" eval="False"/>
+      <field name="header_spacing">0</field>
+      <field name="dpi">80</field>
+   </record>
+
+   
+   <report
+   id = "report_gnco_quote_temmp"
+   string="gnco pdf"
+   model="sale.order"
+   report_type="qweb-pdf"
+   name="gnco_pdf.report_sale_pdf"
+   file="gnco_pdf.report_sale"
+   paperformat="gnco_pdf.gnco_paper_format"/>
+
+      
+  
+</odoo>
