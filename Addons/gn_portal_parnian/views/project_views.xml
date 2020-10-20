@@ -1,0 +1,94 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="parnian_projects_list">
+      <field name="name">projects list</field>
+      <field name="model">gn.portal.parnian.translation.project</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="guid"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View -->
+    <record model="ir.ui.view" id="parnian_projects_form">
+      <field name="name">Translation Project Form</field>
+      <field name="model">gn.portal.parnian.translation.project</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <!--The oe_highlight class gives the button a red color when it is saved.
+		It is usually used to indicate the expected behaviour. -->
+            <!-- <button string="Generate name" type="object" name="generate_record_name" class="oe_highlight"/>
+            <button string="Generate password" type="object" name="generate_record_password"/>
+            <button string="Clear data" type="object" name="clear_record_data"/> -->
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+              </group>
+              <group>
+
+
+              </group>
+
+            </group>
+            <field name="name"/>
+          </sheet>
+          <!-- <field name="value"/>
+          <field name="value2"/> -->
+
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="projects_action_server">
+      <field name="name">parnian server</field>
+      <field name="model_id" ref="model_gn_portal_parnian_translation_project"/>
+      <field name="state">code</field>
+      <field name="code">
+          if record.some_condition():
+            action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "form",
+                "res_model": record._name,
+                "res_id": record.id,
+            }      
+      </field>
+    </record>  -->
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Parnian Translations" id="parnian_translation_menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Translations" id="parnian_translation_menu_1" parent="parnian_translation_menu_root"/>
+    <menuitem name="Menu 2" id="parnian_translation_menu_2" parent="parnian_translation_menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Issues" id="parnian_translation_menu_issues" parent="parnian_translation_menu_1" action="issues_action_window"/>
+
+    <menuitem name="Projects" id="parnian_translation_menu_list" parent="parnian_translation_menu_1" action="projects_action_window"/>
+    <menuitem name="Entries" id="parnian_translation_menu_entries" parent="parnian_translation_menu_1" action="entries_action_window"/>
+    <menuitem name="Branches" id="parnian_translation_menu_branches" parent="parnian_translation_menu_1" action="branches_action_window"/>
+    <menuitem name="Commits" id="parnian_translation_menu_branche_lines" parent="parnian_translation_menu_1" action="branchlines_action_window"/>
+    <menuitem name="Files" id="parnian_translation_menu_files" parent="parnian_translation_menu_1" action="files_action_window"/>
+  
+    <!-- <menuitem name="Server to list" id="sandbox" parent="sandbox.menu_2" action="parnian.translation.projects.action_server"/> -->
+
+  </data>
+</odoo>

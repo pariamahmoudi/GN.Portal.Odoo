@@ -1,0 +1,51 @@
+<odoo>
+    <data noupdate="0">
+        <record model="ir.actions.act_window" id="projects_action_window">
+            <field name="name">Translation Projects</field>
+            <field name="res_model">gn.portal.parnian.translation.project</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.cron" id="translation_entry_recalculate_cron">
+            <field name="name">Translation Entry Recalculate</field>
+            <field name="model_id" ref="model_gn_portal_parnian_translation_entry" />
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">model.recalculate_cron()</field>
+            <field name="interval_type">minutes</field>
+            <field name="interval_number">1</field>
+            <field name="numbercall">-1</field>
+
+        </record>
+        <record model="ir.actions.server" id="gn_portal_parnian_entry_batch_update">
+            <field name="name">Batch Update</field>
+            <field name="model_id" ref="model_gn_portal_parnian_translation_entry"/>
+            <field name="binding_model_id" ref="model_gn_portal_parnian_translation_entry" />
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                    action = {
+                    "type": "ir.actions.act_window",
+                    "view_mode": "form",
+                    "target":"new",
+                    "res_model": "gn.portal.parnian.batchupdate.wizard",
+                    "context":{'entry_ids':records.ids}
+                    }
+            </field>
+
+        </record>
+        <record model="ir.actions.server" id="gn_portal_parnian_entry_add_to_default_branch">
+            <field name="name">Add to My Branch</field>
+            <field name="model_id" ref="model_gn_portal_parnian_translation_entry"/>
+            <field name="binding_model_id" ref="model_gn_portal_parnian_translation_entry" />
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                    for r in records:
+                        r.add_to_default_branch()
+
+            </field>
+
+        </record>
+
+    </data>
+</odoo>

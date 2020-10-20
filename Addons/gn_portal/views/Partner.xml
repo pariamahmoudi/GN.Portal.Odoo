@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="GN_partner_View">
+      <field name="name">GN_partner_View</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <!-- <field name="phone" position="after">
+          
+        </field> -->
+        <xpath expr="//field[@name='name']" position="after">
+          <h4>
+          <group col="2" attrs="{'invisible':  [('company_type', '=', 'company')]}">
+            <group>
+              <field name="gn_first_name" string="First Name" style="width:150px;"/>
+            </group>
+            <group>
+              <field name="gn_last_name" string="Last Name" style="width:150px;"/>
+            </group>
+          </group>
+          </h4>
+        </xpath>
+        <field name="website" position="after">
+          <field name='gn_economic_code' string ="Economic Code"/>
+          <field name='gn_national_code' string ="National Code"/>
+          <field name='gn_salutation' string ="Salutation"/>
+          <field name='gn_fax' string ="Fax"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</odoo>
