@@ -1,0 +1,8 @@
+$font-path: '../fonts/BYekan';
+@font-face {
+    font-family: 'Byekan';
+    src: url('#{$font-path}.woff2') format('woff2'),
+         url('#{$font_path}.woff') format('woff'),
+         url('#{$font_path}.ttf') format('truetype');
+    
+}

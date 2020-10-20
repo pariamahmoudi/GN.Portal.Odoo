@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="gnco_sale_order_view" model="ir.ui.view">
+            <field name="name">Gnco Sale Order Custom</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='customer_signature']" position="after">
+                    <page string="additional notes">
+                        <field name="additional_note"/>
+                        <field name="official_pay"/>
+                        <field name="unofficial_pay"/>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
