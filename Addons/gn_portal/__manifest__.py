@@ -31,7 +31,8 @@
         'views/Partner.xml',
         'views/SaleOrderViews.xml',
         'views/Invoice.xml',
-        'views/Product.xml'
+        'views/Product.xml',
+        'views/User.xml',
 
     ],
     # only loaded in demonstration mode

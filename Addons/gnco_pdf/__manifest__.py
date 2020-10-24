@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base' , 'sale' ],
+    'depends': ['base' , 'sale' ,],
 
     # always loaded
     'data': [
@@ -29,8 +29,6 @@
         'views/templates.xml',
         'reports/report.xml',
         'reports/report_sale.xml',
-        'views/gnco_sale_order_report.xml',
-        'views/gnco_user_sign.xml',
         
         
     ],
