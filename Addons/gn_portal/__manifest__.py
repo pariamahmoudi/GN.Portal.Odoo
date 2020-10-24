@@ -30,6 +30,7 @@
         'views/Lot.xml',
         'views/Partner.xml',
         'views/SaleOrderViews.xml',
+        'views/SerialNumberViews.xml',
         'views/Invoice.xml',
         'views/Product.xml'
 
