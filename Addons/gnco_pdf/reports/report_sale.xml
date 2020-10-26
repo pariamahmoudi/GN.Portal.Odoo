@@ -4,30 +4,29 @@
         <t t-call="web.external_layout">
             <t t-set="doc" t-value="doc.with_context(lang=user.lang)" />
             <div class="page"  style="font-family: 'Byekan'" >
-                <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="max-height: 4cm; max-width: 8cm;"/>
+                
+                <table style="width:100%">
+                    <tr>
+
+                        <td style="width:50%;rowspan:5">
+                            <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="max-height: 4cm; max-width: 8cm;"/>
+                        </td>
+                        <td style="text-align: center">
+                            <p t-field="doc.company_id.name"/>
+                            <p t-field="doc.company_id.street"/>
+                            <p t-field="doc.company_id.zip"/>
+                            <p t-field="doc.company_id.phone"/>
+                        </td>
+                        
+                    </tr>
+
+                </table>
                 <div style="border: 1px solid black;" />
                 <br/>
-                <table style="width:100%" align="center">
-                    <tr>
-                        <th>
-                            
-                        </th>
-                        <th> 
-                        </th>
-                        <th>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td align="right" style="width:30%">
-                            <strong>seller</strong>
-                            <span t-field="doc.company_id.name"/>
-                        </td>
-                        <td colspan="2" align="left" >
-
-                            <span t-field="doc.company_id.street"/>
-                        </td>
-                    </tr>
-                </table>
+                <div>
+                    <strong>seller</strong>
+                    <span t-field="doc.company_id.name"/>
+                </div>
                 <br/>
                 <div style="border: 1px solid black;" />
                 <br/>
@@ -203,12 +202,12 @@
                 <div t-if="doc.order_line.tax_id">
                     <strong>Additional Notes:</strong>
                     <p t-field="doc.gn_additional_note"/>
-                    <!-- <span t-field="doc.official_pay"/> -->
+                    <span t-field="doc.gn_official_pay"/>
                 </div>
                 <div t-if="not doc.order_line.tax_id" >
                     <strong>Additional Notes:</strong>
                     <p t-field="doc.gn_additional_note"/>
-                    <!-- <span t-field="doc.unofficial_pay"/> -->
+                    <span t-field="doc.gn_unofficial_pay"/>
                 </div>
                 <br/>
                 <div style="border: 1px solid black;"/>

@@ -40,6 +40,8 @@
                 <xpath expr="//page[@name='customer_signature']" position="after">
                     <page string="additional notes">
                         <field name="gn_additional_note"/>
+                        <field name="gn_official_pay"/>
+                        <field name="gn_unofficial_pay"/>
                     </page>
                 </xpath>
             </field>

@@ -7,6 +7,9 @@ class SaleOrderExtensions(SaleOrder):
     gn_additional_note = fields.Text(default="تاریخ یک هفته\n هزینه ارسال با مشتری")
     gn_reciever = fields.Many2one('res.partner')
     gn_calculate_date = fields.Char(compute="calculate_date")
+    gn_official_pay = fields.Text(default="شماره حساب 1-2679689-810-832 \n شماره کارت 848646 \n ir5454 شماره شبا   \n گستره نگار حامی پرنیان \n بانک سامان")
+    gn_unofficial_pay = fields.Text(default="شماره حساب 1-2679689-810-832 \n شماره کارت 62198610 \n irشماره شبا  5454 \n حسین \n بانک سامان")
+    
     @api.depends('gn_create_date_override')
     def _compute_overrides(self):
         for order in self:
