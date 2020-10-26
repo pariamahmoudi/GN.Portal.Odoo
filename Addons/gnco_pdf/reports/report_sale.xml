@@ -202,12 +202,39 @@
                 <div t-if="doc.order_line.tax_id">
                     <strong>Additional Notes:</strong>
                     <p t-field="doc.gn_additional_note"/>
-                    <span t-field="doc.gn_official_pay"/>
+                    <strong>اطلاعات واریز</strong>
+                    <br/>
+                    <strong>بانک سامان</strong>
+                    <br/>
+                    <strong>بنام گستره نگار حامی پرنیان</strong>
+                    <br/>
+                    <strong>شماره حساب</strong>
+                    <span>1-2679689-810-832</span>
+                    <br/>
+                    <strong>شماره کارت</strong>
+                    <span>1705-3694-8610-6219</span>
+                    <br/>
+                    <strong>شماره شبا</strong>
+                    <span>IR330560083281002679689001</span>
+
                 </div>
                 <div t-if="not doc.order_line.tax_id" >
                     <strong>Additional Notes:</strong>
                     <p t-field="doc.gn_additional_note"/>
-                    <span t-field="doc.gn_unofficial_pay"/>
+                    <strong>اطلاعات واریز</strong>
+                    <br/>
+                    <strong>بانک پاسارگاد</strong>
+                    <br/>
+                    <strong>بنام حسین اردکانی</strong>
+                    <br/>
+                    <strong>شماره حساب</strong>
+                    <span>2-10244982-8000-230</span>
+                    <br/>
+                    <strong>شماره کارت</strong>
+                    <span>1513-9288-2910-5022</span>
+                    <br/>
+                    <strong>شماره شبا</strong>
+                    <span>IR5105700230800010244987102</span>
                 </div>
                 <br/>
                 <div style="border: 1px solid black;"/>

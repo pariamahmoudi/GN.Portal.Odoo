@@ -30,21 +30,4 @@
             </field>
         </record>
     </data>
-    <data>
-        <record id="gnco_sale_order_view" model="ir.ui.view">
-            <field name="name">Gnco Sale Order Custom</field>
-            <field name="model">sale.order</field>
-            <field name="inherit_id" ref="sale.view_order_form"/>
-            <field name="arch" type="xml">
-                
-                <xpath expr="//page[@name='customer_signature']" position="after">
-                    <page string="additional notes">
-                        <field name="gn_additional_note"/>
-                        <field name="gn_official_pay"/>
-                        <field name="gn_unofficial_pay"/>
-                    </page>
-                </xpath>
-            </field>
-        </record>
-    </data>
 </odoo>

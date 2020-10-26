@@ -27,8 +27,10 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/saleordercustom.xml',
         'reports/report.xml',
         'reports/report_sale.xml',
+
         
         
     ],

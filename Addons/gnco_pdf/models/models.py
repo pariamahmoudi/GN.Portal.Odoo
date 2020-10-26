@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api
 
+
 class gnco_pdf(models.Model):
     _name = 'gnco_pdf.gnco_pdf'
     _description = 'gnco_pdf.gnco_pdf'

@@ -31,33 +31,33 @@ msgstr ""
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<strong>Cosumer Address:</strong>"
-msgstr "<strong>آدرس</strong>"
+msgstr "<strong>نشانی</strong>"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<strong>Quotation #</strong>"
-msgstr "<strong>شماره پیش فاکتور</strong>"
+msgstr "<strong>شماره پیش‌فاکتور</strong>"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<strong>Quotation Date:</strong>"
-msgstr "<strong>تاریخ پیش فاکتور</strong>"
+msgstr "<strong>تاریخ پیش‌فاکتور</strong>"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<strong>Customer Name:</strong>"
-msgstr "<strong>نام مشتری</strong>"
+msgstr "<strong>نام خریدار</strong>"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<strong>Customer Phone:</strong>"
-msgstr "<strong>شماره تماس مشتری</strong>"
+msgstr "<strong>شماره تماس </strong>"
 
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "Description"
-msgstr "توصیف"
+msgstr "نام کالا"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
@@ -82,12 +82,12 @@ msgstr "مالیات ارزش افزوده"
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<strong>Subtotal</strong>"
-msgstr "جمع زیر"
+msgstr "جمع بدون احتساب مالیات"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<strong>Total</strong>"
-msgstr "مقدار کل"
+msgstr "مبلغ کل"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
@@ -97,7 +97,7 @@ msgstr "<strong>توضیحات :</strong>"
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<strong>Salesperson:</strong>"
-msgstr "<strong>فروشنده</strong>"
+msgstr "<strong>صادر کننده</strong>"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
@@ -107,7 +107,7 @@ msgstr "<strong>مدیر فروش</strong>"
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "<span> customer signature</span>"
-msgstr "<strong>امضاء مشتری</strong>"
+msgstr "<strong>امضاء خریدار</strong>"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
