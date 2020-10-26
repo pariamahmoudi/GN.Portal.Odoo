@@ -57,7 +57,7 @@ msgstr "<strong>شماره تماس مشتری</strong>"
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
 msgid "Description"
-msgstr "توضیف"
+msgstr "توصیف"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
@@ -116,6 +116,13 @@ msgstr "<strong>فروشنده</strong>"
 
 #. module: gnco_pdf
 #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
-msgid "<strong>address</strong>"
-msgstr "<strong>آدرس</strong>"
+msgid "<strong>seller</strong>"
+msgstr "فروشنده"
+
+
+#. module: gnco_pdf
+#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+msgid "<strong>reciever</strong>"
+msgstr "<strong>گیرنده</strong>"
+
 

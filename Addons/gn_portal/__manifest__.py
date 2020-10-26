@@ -32,7 +32,8 @@
         'views/SaleOrderViews.xml',
         'views/SerialNumberViews.xml',
         'views/Invoice.xml',
-        'views/Product.xml'
+        'views/Product.xml',
+        'views/User.xml',
 
     ],
     # only loaded in demonstration mode

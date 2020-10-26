@@ -6,3 +6,32 @@ $font-path: '../fonts/BYekan';
          url('#{$font_path}.ttf') format('truetype');
     
 }
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid black;
+    // border-left: 1px solid black;
+    // border-right: 1px solid black;
+}
+.table th,
+.table td {
+
+    border-top: 1px solid black;
+    // border-left: 1px solid black;
+    // border-right: 1px solid black;
+
+}
+// .sale_tbody{
+    
+//     border-bottom: 1px solid black;
+//     border-left: 1px solid black;
+//     border-right: 1px solid black;
+// }
+// .sale_tbody td{
+    
+//     border-bottom: 1px solid black;
+//     border-left: 1px solid black;
+//     border-right: 1px solid black;
+// }
+// .clearfix td{
+//     border-bottom: 1px solid black;
+// }
