@@ -126,3 +126,4 @@ msgid "<strong>reciever</strong>"
 msgstr "<strong>گیرنده</strong>"
 
 
+

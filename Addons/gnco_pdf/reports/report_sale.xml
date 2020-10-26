@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="report_gnco_quote">
-        <t t-call="web.external_layout">
+        <t t-call="web.basic_layout">
             <t t-set="doc" t-value="doc.with_context(lang=user.lang)" />
             <div class="page"  style="font-family: 'Byekan'" >
                 
@@ -255,7 +255,7 @@
                         </td>
                         <td style="height:300px; width : 33% ; border: 1px solid black" align="center">
                             <strong> sales manager </strong>
-                            <p> Mohsen </p>
+                            <p> محسن بختیاری </p>
                         </td>
                         <td style="height:300px; width : 33% ; border: 1px solid black" align="center">
                             <span> customer signature</span>
