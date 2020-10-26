@@ -8,6 +8,15 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="customer_id" />
+                    <field name="expire_date" />
+                    <field name="purchase_date" />
+                    <field name="hid" />
+                    <field name="number_of_users" />
+
+
+
+
                 </tree>
             </field>
         </record>
@@ -30,6 +39,7 @@
                             <group>
                                 <field name="categ_id" />
                                 <field name="customer_id" />
+                                <field name="invoice_id" />
                                 <field name="shopper_name" />
                                 <field name="product_name" />
                                 <field name="hid" />

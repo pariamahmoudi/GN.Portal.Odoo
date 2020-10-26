@@ -4,6 +4,7 @@ class SerialNumber(models.Model):
     _name = "gn.portal.serialnumbers"
     name = fields.Char()
     customer_id = fields.Many2one('res.partner', string="Customer")
+    invoice_id = fields.Many2one('account.move', string="Invoice")
     shopper_name = fields.Char(string="Shopper Name")
     purchase_date = fields.Date(string="Purchase Date")
     hid = fields.Char(string="HID")
@@ -15,7 +16,7 @@ class SerialNumber(models.Model):
         'product.category',string= 'Product Category')
 
     number_of_users = fields.Selection([
-        ('single', 'Single'),
+        ('1', '1'),
         ('2', '2'),
         ('3', '3'),
         ('5', '5'),
@@ -27,8 +28,9 @@ class SerialNumber(models.Model):
         ('75', '75'),
         ('90', '90'),
         ('150', '150'),
-        ('Unlimited', 'Unlimited'),
-    ])
+        ('unlimited', 'Unlimited'),
+        ('none','none')
+    ],defualt="1")
 
     lock_type = fields.Selection([
         ('usb', 'USB'), 
