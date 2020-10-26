@@ -1,6 +1,6 @@
 <odoo>
     <data>
-    <template id="persian_calendar" inherit_id="web.report_assets_common">
+    <template id="persian_digits" inherit_id="web.report_assets_common">
             <xpath expr="//link[@href='/web/static/src/scss/fonts.scss']" position="after">
               <link rel="stylesheet" type="text/scss" href="/gnco_pdf/static/src/scss/byekan.scss"/>
             </xpath>

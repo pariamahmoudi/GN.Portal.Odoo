@@ -1,0 +1,79 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="serialnumbers_list">
+            <field name="name">SerialNumbers</field>
+            <field name="model">gn.portal.serialnumbers</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="customer_id" />
+                    <field name="expire_date" />
+                    <field name="purchase_date" />
+                    <field name="hid" />
+                    <field name="number_of_users" />
+
+
+
+
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="serialnumbers_form">
+            <field name="name">Serial Number</field>
+            <field name="model">gn.portal.serialnumbers</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Serial" nolabel="1" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="categ_id" />
+                                <field name="customer_id" />
+                                <field name="invoice_id" />
+                                <field name="shopper_name" />
+                                <field name="product_name" />
+                                <field name="hid" />
+                            </group>
+                            <group>
+                                <field name="purchase_date" />
+                                <field name="expire_date" />
+
+                                <field name="lock_type" />
+                                <field name="lock_description" />
+                                <field name="number_of_users" />
+                            </group>
+
+                        </group>
+                        Comments:
+                        <div>
+                            <field name="comments" nolabel="1" />
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="serialnumbers_action_window">
+            <field name="name">Parnian File</field>
+            <field name="res_model">gn.portal.serialnumbers</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- <menuitem id="menu_serials_old" name="Serials" action="serialnumbers_action_window" parent="sale.product_menu_catalog"/> -->
+        <menuitem id="menu_serials" name="Serials" action="serialnumbers_action_window" parent="sale.product_menu_catalog"/>
+
+    </data>
+</odoo>
