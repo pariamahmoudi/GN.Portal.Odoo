@@ -12,22 +12,22 @@
                             <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="max-height: 4cm; max-width: 8cm;"/>
                         </td>
                         <td style="text-align: center">
-                            <p t-field="doc.company_id.name"/>
-                            <p t-field="doc.company_id.street"/>
-                            <p t-field="doc.company_id.zip"/>
-                            <p t-field="doc.company_id.phone"/>
+                            <div t-field="doc.company_id.name"/>
+                            <div t-field="doc.company_id.street"/>
+                            <div t-field="doc.company_id.zip"/>
+                            <div t-field="doc.company_id.phone"/>
                         </td>
                         
                     </tr>
 
                 </table>
+                <br/>
                 <div style="border: 1px solid black;" />
                 <br/>
                 <div>
                     <strong>seller</strong>
                     <span t-field="doc.company_id.name"/>
                 </div>
-                <br/>
                 <div style="border: 1px solid black;" />
                 <br/>
                     <table style="width:100%">
@@ -158,12 +158,14 @@
                     <div id="total" class="row" name="total">
                         <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
                             <table class="table table-sm">
-                                <tr style="">
-                                    <td name="td_amount_untaxed_label"><strong>Subtotal</strong></td>
-                                    <td name="td_amount_untaxed" class="text-right">
-                                        <span t-field="doc.amount_untaxed"/>
-                                    </td>
-                                </tr>
+                                <t t-if="doc.order_line.tax_id">
+                                    <tr style="">
+                                        <td name="td_amount_untaxed_label"><strong>Subtotal</strong></td>
+                                        <td name="td_amount_untaxed" class="text-right">
+                                            <span t-field="doc.amount_untaxed"/>
+                                        </td>
+                                    </tr>
+                                </t>
                                 <t t-foreach="doc.amount_by_group" t-as="amount_by_group">
                                     <tr style="">
                                         <t t-if="amount_by_group[5] == 1 and doc.amount_untaxed == amount_by_group[2]">
@@ -246,18 +248,18 @@
                         <th style="border: 1px solid black;"></th>
                     </tr>
                     <tr>
-                        <td style="height:300px; width : 33% ; border: 1px solid black" align="center">
+                        <td style="height:200px; width : 33% ; border: 1px solid black" align="center">
                             <strong>Salesperson:</strong>
                             <p class="m-0" t-field="doc.user_id"/>
                             <div t-if="doc.user_id.quote_signature">
                                 <img t-att-src="image_data_uri(doc.user_id.quote_signature)" style="max-height: 4cm; max-width: 8cm;"/>
                             </div>
                         </td>
-                        <td style="height:300px; width : 33% ; border: 1px solid black" align="center">
+                        <td style="height:200px; width : 33% ; border: 1px solid black" align="center">
                             <strong> sales manager </strong>
-                            <p> Mohsen </p>
+                            <p> محسن بختیاری </p>
                         </td>
-                        <td style="height:300px; width : 33% ; border: 1px solid black" align="center">
+                        <td style="height:200px; width : 33% ; border: 1px solid black" align="center">
                             <span> customer signature</span>
                            
                         </td>
@@ -272,7 +274,7 @@
         <t t-call="web.html_container">
           
             <t t-foreach="docs" t-as="doc">
-                <t t-call="gnco_pdf.report_gnco_quote" t-lang="user.lang"/>
+                <t t-call="gn_portal_sale_report.report_gnco_quote" t-lang="user.lang"/>
                     
             </t>
         </t>

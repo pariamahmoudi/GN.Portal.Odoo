@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+      <template id="persian_digits" inherit_id="web.report_assets_common">
+        <xpath expr="//link[@href='/web/static/src/scss/fonts.scss']" position="after">
+          <link rel="stylesheet" type="text/scss" href="/gn_portal_sale_report/static/src/scss/byekan.scss"/>
+        </xpath>
+      </template>
+    </data>
+</odoo>

@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * gnco_pdf
+# * gn_portal_sale_report
 # 
 # Translators:
 # Zahed Alfak <tamass4116@gmail.com>, 2018
@@ -28,101 +28,105 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Cosumer Address:</strong>"
 msgstr "<strong>نشانی</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Quotation #</strong>"
 msgstr "<strong>شماره پیش‌فاکتور</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Quotation Date:</strong>"
 msgstr "<strong>تاریخ پیش‌فاکتور</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Customer Name:</strong>"
 msgstr "<strong>نام خریدار</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Customer Phone:</strong>"
 msgstr "<strong>شماره تماس </strong>"
 
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "Description"
 msgstr "نام کالا"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "Quantity"
 msgstr "تعداد"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "Unit Price"
 msgstr "قیمت واحد"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "Taxes"
 msgstr "مالیات ارزش افزوده"
 
-#  #. module: gnco_pdf
-#  #: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#  #. module: gn_portal_sale_report
+#  #: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 #  msgid "<span>Amount</span>"
 #  msgstr "مقدار"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Subtotal</strong>"
-msgstr "جمع بدون احتساب مالیات"
+msgstr "جمع"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Total</strong>"
 msgstr "مبلغ کل"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Additional Notes:</strong>"
 msgstr "<strong>توضیحات :</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>Salesperson:</strong>"
 msgstr "<strong>صادر کننده</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong> sales manager </strong>"
 msgstr "<strong>مدیر فروش</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<span> customer signature</span>"
 msgstr "<strong>امضاء خریدار</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>seller</strong>"
 msgstr "<strong>فروشنده</strong>"
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>seller</strong>"
 msgstr "فروشنده"
 
 
-#. module: gnco_pdf
-#: model_terms:ir.ui.view,arch_db:gnco_pdf.report_gnco_quote
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
 msgid "<strong>reciever</strong>"
 msgstr "<strong>گیرنده</strong>"
 
 
+#. module: gn_portal_sale_report
+#: model_terms:ir.ui.view,arch_db:gn_portal_sale_report.report_gnco_quote
+msgid "<span>Disc.%</span>"
+msgstr "درصد تخفیف"
