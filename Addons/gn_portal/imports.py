@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from math import ceil
 from typing import TYPE_CHECKING, Any, List, Dict
 import logging
 #from .models.parnian_translation_branch import ParnianTranslationBranch
@@ -22,7 +23,10 @@ else:
 g_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 j_days_in_month = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29]
 
-
+class Utils():
+    @staticmethod
+    def numbertotext(t):
+        return "hi"
 class GregorianToJalali:
 
     def __init__(self,gyear,gmonth,gday):
@@ -147,3 +151,99 @@ class JalaliToGregorian:
         self.gmonth = i+1
         self.gday = g_day_no+1
         self.gyear = gy
+unit = {
+"0" : "" ,
+"1" : "یک" ,  
+"2" : "دو" , 
+"3" : "سه" ,
+"4" : "چهار" ,
+"5" : "پنج" , 
+"6" : "شش" , 
+"7" : "هفت" , 
+"8" : "هشت" , 
+"9" : "نه"}
+
+tens = {
+"0" : "" ,
+"10" : "ده" , 
+"11" : "یازده" , 
+"12" : "دوازده" , 
+"13" : "سیزده" , 
+"14" : "چهارده" , 
+"15" : "پانزده" , 
+"16" : "شانزده" , 
+"17" : "هفده" , 
+"18" : "هجده" , 
+"19" : "نوزده" , 
+"2" : "بیست" , 
+"3" : "سی" , 
+"4" : "چهل" , 
+"5" : "پنجاه" , 
+"6" : "شصت" , 
+"7" : "هفتاد" , 
+"8" : "هشتاد" , 
+"9" : "نود"}
+
+hundreds = {
+"0" : "" ,
+"1" : "یکصد" ,  
+"2" : "دویست" , 
+"3" : "سیصد" ,
+"4" : "چهارصد" ,
+"5" : "پانصد" , 
+"6" : "ششصد" , 
+"7" : "هفتصد" , 
+"8" : "هشتصد" , 
+"9" : "نهصد"
+}
+prefix =[
+    "ریال" ,
+    "هزار و" ,
+    "میلیون و" ,
+    "میلیارد و" ,
+]
+
+def toalpha(a):   
+    result = []
+    if len(a) == 1:
+            result.append(unit.get(a))
+    if len(a) == 2:
+            if a[0] == "1":
+                    result.append(tens.get(a[0::]))
+            else:
+                    result.append(tens.get(a[0]))
+                    result.append(unit.get(a[1]))
+    if len(a) == 3:
+            result.append(hundreds.get(a[0]))
+            if a[1] == "1":
+                    result.append(tens.get(a[1::]))
+            else:
+                    result.append(tens.get(a[1]))
+                    result.append(unit.get(a[2]))
+    for a in range(len(result)-1):
+            if result[a] == "":
+                    result.pop(a)
+    return " و ".join(result)
+              
+def count(b):
+    res = []
+    for i in range(ceil(len(b) / 3)):
+            if len(b)% 3 > 0:
+                    res.append(toalpha(b[0:len(b)% 3:]))
+                    b = b[len(b)% 3:]
+            else :
+                    res.append(toalpha(b[0:3:]))
+                    b = b[3:]
+    return res
+def main(ta):
+    total = str(int(ta))
+    result = count(total)
+    resultreversed = result[::-1]
+    final = []
+    p = ""
+    for i in range(len(resultreversed)):
+            final.append(resultreversed[i] + " " + prefix[i])
+    for i in reversed(final):
+            p += i
+    return p
+
