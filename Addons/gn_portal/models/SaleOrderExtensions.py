@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from ..imports import fields,models,SaleOrder,SaleOrderLine,api , GregorianToJalali
+from ..imports import fields,models,SaleOrder,SaleOrderLine,api , GregorianToJalali ,main 
 
 class SaleOrderExtensions(SaleOrder):
     _inherit = 'sale.order'
     gn_reciever = fields.Many2one('res.partner')
     gn_calculate_date = fields.Char(compute="calculate_date")
-     
+    gn_pricetoalpha = fields.Char(compute="price_calculation")
     @api.depends('gn_create_date_override')
     def _compute_overrides(self):
         for order in self:
@@ -17,10 +17,14 @@ class SaleOrderExtensions(SaleOrder):
 
     @api.depends('date_order')
     def calculate_date(self):
-        
-        p = GregorianToJalali(self.date_order.year , self.date_order.month , self.date_order.day)
-        self.gn_calculate_date = "{}/{}/{}".format(p.jyear, p.jmonth ,p.jday  )
-        
+        for order in self:
+            p = GregorianToJalali(order.date_order.year , order.date_order.month , order.date_order.day)
+            order.gn_calculate_date = "{}/{}/{}".format(p.jyear, p.jmonth ,p.jday  )
+    @api.depends('amount_total')
+    def price_calculation(self):
+        for order in self:
+            p = main(order.amount_total)      
+            order.gn_pricetoalpha = p
 
 
 
