@@ -308,9 +308,9 @@
                     <tr>
                         <td style="height:200px; width : 33% ; border: 1px solid black" align="center">
                             <strong>Salesperson:</strong>
-                            <p class="m-0" t-field="doc.user_id"/>
-                            <div t-if="doc.user_id.quote_signature">
-                                <img t-att-src="image_data_uri(doc.user_id.quote_signature)" style="max-height: 4cm; max-width: 8cm;"/>
+                            <p class="m-0" t-field="user.name"/>
+                            <div t-if="user.quote_signature">
+                                <img t-att-src="image_data_uri(user.quote_signature)" style="max-height: 4cm; max-width: 8cm;"/>
                             </div>
                         </td>
                         <td style="height:200px; width : 33% ; border: 1px solid black" align="center">

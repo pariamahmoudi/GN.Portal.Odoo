@@ -4,7 +4,7 @@ $font-path: '../fonts/BYekan';
     src: url('#{$font-path}.woff2') format('woff2'),
          url('#{$font_path}.woff') format('woff'),
          url('#{$font_path}.ttf') format('truetype');
-    
+    // unicode-range: U+0030-0039;
 }
 .table thead th {
     vertical-align: bottom;
