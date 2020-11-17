@@ -26,6 +26,7 @@
     'data': [
         'views/gn_ticket_serial.xml',
         'views/serial_ticket_view.xml',
+        'wizards/views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
