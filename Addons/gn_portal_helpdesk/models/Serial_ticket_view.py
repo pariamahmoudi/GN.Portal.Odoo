@@ -31,6 +31,7 @@ class serialticket(models.Model):
 
 
     def action_view_helpdesk_tickets(self):
+       
         return {
             "name": self.name,
             "view_type": "form",
@@ -38,5 +39,7 @@ class serialticket(models.Model):
             "res_model": "helpdesk.ticket",
             "type": "ir.actions.act_window",
             "domain": [("gn_serial_number", "=", self.id)],
-            "context": self.env.context,
+            "context": {"default_partner_id" : self.customer_id.id },
+            
+            
         }

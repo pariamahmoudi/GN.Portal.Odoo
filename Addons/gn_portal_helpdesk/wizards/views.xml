@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2017 Jairo Llopis <jairo.llopis@tecnativa.com>
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
 
     <record id="gn_ticket_wizard_form" model="ir.ui.view">
@@ -16,14 +14,14 @@
 
                 </sheet>
                 <footer>
-                    <button name="action_batch_update" type="object" string="Update" class="oe_highlight" />
-                    <button special="cancel" string="Cancel" />
+                    <!-- <button name="action_batch_update" type="object" string="Update" class="oe_highlight" />
+                    <button special="cancel" string="Cancel" /> -->
                 </footer>
             </form>
         </field>
     </record>
     <record id="gn_ticket_wizard_action" model="ir.actions.act_window">
-        <field name="name">Ticket Wizard</field>
+        <field name="name">gn_ticket_action</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">gn_ticket_wizard</field>
         <field name="view_mode">form</field>
@@ -38,8 +36,9 @@
         <field name="arch" type="xml">
             <field name="hid" position='after'>
                 <button
-                    name="gn_ticket_wizard.gn_ticket_wizard_action"
+                    name="gn_portal_helpdesk.gn_ticket_wizard_action"
                     type="action"
+                    string="create"
                 />
             </field>
         </field>

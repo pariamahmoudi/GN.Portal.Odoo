@@ -24,6 +24,7 @@
 
     # always loaded
     'data': [
+        'security/ir.model.access.csv',
         'views/gn_ticket_serial.xml',
         'views/serial_ticket_view.xml',
         'wizards/views.xml',
