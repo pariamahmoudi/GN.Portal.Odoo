@@ -1,1 +1,1 @@
-from . import model
+#from . import gn_ticket_wizard

@@ -27,7 +27,7 @@
         'security/ir.model.access.csv',
         'views/gn_ticket_serial.xml',
         'views/serial_ticket_view.xml',
-        'wizards/views.xml',
+        #'wizards/gn_ticket_wizard.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
