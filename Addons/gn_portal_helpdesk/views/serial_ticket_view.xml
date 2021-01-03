@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="gn_serial_ticket_button" model="ir.ui.view">
+        <field name="name">gn_serial_ticket_button</field>
+        <field name="model">gn.portal.serialnumbers</field>
+        <field name="inherit_id" ref="gn_portal.serialnumbers_form" />
+        <field name="arch" type="xml">
+            <div class="oe_button_box" name="button_box">
+                <button
+
+                    context="{'search_default_open': True, 'default_gn_serial_number': active_id }"
+                    
+                    name="action_view_helpdesk_tickets"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-life-ring"
+                >
+                <field name="helpdesk_ticket_count_string" widget="statinfo" />                     
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>    
