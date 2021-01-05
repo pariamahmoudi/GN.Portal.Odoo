@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="GN_ticket_customization">
+            <field name="name">GN_ticket_customization</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_email" position="after">
+                    <field name='gn_serial_number' string= 'Serial Numbers' domain="[('customer_id', '=', partner_id)]"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>    
