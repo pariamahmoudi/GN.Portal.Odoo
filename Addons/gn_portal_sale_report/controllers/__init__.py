@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
 from . import controllers
-form . import CustomReportPortal
+from . import CustomReportPortal
