@@ -6,8 +6,19 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <field name="partner_id" position="before">
+                    <field name="gn_description"/ >
+                </field>
+            </field>
+        </record>
+    </data>
+    <data>
+        <record model="ir.ui.view" id="GN_proforma_View">
+            <field name="name">GN_proforma_View</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
                 <field name="partner_id" position="after">
-                    <field name='GN_Organization' string='Organization'/>
                     <field name="gn_reciever" domain="[('parent_id', '=', partner_id)]"/>
                 </field>
             </field>
